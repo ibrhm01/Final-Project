@@ -1,0 +1,23 @@
+﻿@model TrialTest
+
+<section class="newsletter-area newsletter-bg" data-background="assets/img/bg/@Model.BackgroundImageUrl">
+    <div class="container">
+        <div class="newsletter-inner-wrap">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="newsletter-content">
+                        <h4>@Model.Title</h4>
+                        <p>@Model.Description</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form action="#" class="newsletter-form">
+                        <input type="email" required placeholder="@Model.Placeholder">
+                        <button class="btn">get started</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
