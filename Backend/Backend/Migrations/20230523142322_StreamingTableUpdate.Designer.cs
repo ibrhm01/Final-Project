@@ -4,6 +4,7 @@ using Backend.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230523142322_StreamingTableUpdate")]
+    partial class StreamingTableUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -179,104 +182,6 @@ namespace Backend.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Backend.Models.Information", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("About")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Informations");
-                });
-
-            modelBuilder.Entity("Backend.Models.Introduction", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CurrentPage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("MainPage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Introductions");
-                });
-
-            modelBuilder.Entity("Backend.Models.Pricing", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AmountOfScreens")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Cancel")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<decimal>("Price")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("PricingType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Resolution")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VideoQuality")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Pricings");
-                });
-
             modelBuilder.Entity("Backend.Models.Service", b =>
                 {
                     b.Property<int>("Id")
@@ -356,89 +261,6 @@ namespace Backend.Migrations
                     b.ToTable("Streamings");
                 });
 
-            modelBuilder.Entity("Backend.Models.Tag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tags");
-                });
-
-            modelBuilder.Entity("Backend.Models.TopRated", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Duration")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Point")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Quality")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TopRateds");
-                });
-
-            modelBuilder.Entity("Backend.Models.TopRatedCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("TopRatedId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("TopRatedId");
-
-                    b.ToTable("TopRatedCategories");
-                });
-
             modelBuilder.Entity("Backend.Models.TrialTest", b =>
                 {
                     b.Property<int>("Id")
@@ -491,7 +313,7 @@ namespace Backend.Migrations
                     b.ToTable("Types");
                 });
 
-            modelBuilder.Entity("Backend.Models.Upcoming", b =>
+            modelBuilder.Entity("Backend.Models.UpcomingMovie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -530,7 +352,7 @@ namespace Backend.Migrations
 
                     b.HasIndex("TypeId");
 
-                    b.ToTable("Upcomings");
+                    b.ToTable("UpcomingMovies");
                 });
 
             modelBuilder.Entity("Backend.Models.Category", b =>
@@ -544,29 +366,10 @@ namespace Backend.Migrations
                     b.Navigation("Banner");
                 });
 
-            modelBuilder.Entity("Backend.Models.TopRatedCategory", b =>
-                {
-                    b.HasOne("Backend.Models.Category", "Category")
-                        .WithMany("TopRatedCategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Backend.Models.TopRated", "TopRated")
-                        .WithMany("TopRatedCategories")
-                        .HasForeignKey("TopRatedId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("TopRated");
-                });
-
-            modelBuilder.Entity("Backend.Models.Upcoming", b =>
+            modelBuilder.Entity("Backend.Models.UpcomingMovie", b =>
                 {
                     b.HasOne("Backend.Models.Type", "Type")
-                        .WithMany("Upcomings")
+                        .WithMany("UpcomingMovies")
                         .HasForeignKey("TypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -579,19 +382,9 @@ namespace Backend.Migrations
                     b.Navigation("Categories");
                 });
 
-            modelBuilder.Entity("Backend.Models.Category", b =>
-                {
-                    b.Navigation("TopRatedCategories");
-                });
-
-            modelBuilder.Entity("Backend.Models.TopRated", b =>
-                {
-                    b.Navigation("TopRatedCategories");
-                });
-
             modelBuilder.Entity("Backend.Models.Type", b =>
                 {
-                    b.Navigation("Upcomings");
+                    b.Navigation("UpcomingMovies");
                 });
 #pragma warning restore 612, 618
         }

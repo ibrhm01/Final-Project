@@ -1,9 +1,7 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-
 namespace Backend.Models
 {
-	public class UpcomingMovie:BaseEntity
+	public class TopRated:BaseEntity
 	{
         public string ImageUrl { get; set; }
         public string Name { get; set; }
@@ -11,9 +9,7 @@ namespace Backend.Models
         public string Quality { get; set; }
         public int Duration { get; set; }
         public double Point { get; set; }
-        public int TypeId { get; set; }
-        public Type Type { get; set; }
-
+        public List<TopRatedCategory> TopRatedCategories { get; set; }
 
     }
 }

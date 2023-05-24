@@ -6,6 +6,8 @@ namespace Backend.Models
 		public string Name { get; set; }
 		public int BannerId{ get; set; }
 		public Banner Banner { get; set; }
-	}
+        public List<TopRatedCategory> TopRatedCategories { get; set; }
+
+    }
 }
 

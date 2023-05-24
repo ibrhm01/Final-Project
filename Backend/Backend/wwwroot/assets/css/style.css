@@ -1410,6 +1410,7 @@ label {
     background-position: top center;
     background-size: cover;
     padding: 120px 0 60px;
+    min-height:950px;
 }
 
 .tr-movie-bg2 {
@@ -3210,3 +3211,24 @@ label {
 
 
 
+/*.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: darkblue;
+    z-index: 9999;
+    transition: width 0.2s ease;
+}
+
+    .progress-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: darkblue;*/ /* Updated color */
+        /*opacity: 0.7;*/ /* Adjust the opacity as desired */
+    /*}*/

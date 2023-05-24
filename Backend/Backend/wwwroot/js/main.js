@@ -1,3 +1,16 @@
+
+//document.addEventListener("DOMContentLoaded", function () {
+//    const progressBar = document.querySelector(".progress-bar");
+//    const windowHeight = window.innerHeight;
+//    const fullHeight = document.body.clientHeight - windowHeight;
+
+//    window.addEventListener("scroll", function () {
+//        const scrollPosition = window.scrollY;
+//        const percentage = (scrollPosition / fullHeight) * 100;
+//        progressBar.style.width = percentage + "%";
+//    });
+//});
+
 (function ($) {
     "use strict";
 

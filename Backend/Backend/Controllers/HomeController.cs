@@ -21,15 +21,17 @@ public class HomeController : Controller
         HomeVM homeVM = new();
         homeVM.Banner = _appDbContext.Banners.Include(b => b.Categories).FirstOrDefault();
         homeVM.Types = _appDbContext.Types.Where(t => t.IsDeleted != true).ToList();
-        homeVM.UpcomingMovies = _appDbContext.UpcomingMovies.Where(t => t.IsDeleted != true).ToList();
+        homeVM.Upcomings = _appDbContext.Upcomings.Where(t => t.IsDeleted != true).ToList();
         homeVM.Service = _appDbContext.Services.Where(s => s.IsDeleted != true).FirstOrDefault();
         homeVM.BestSeries = _appDbContext.BestSeries.Where(s => s.IsDeleted != true).ToList();
         homeVM.TrialTest = _appDbContext.TrialTests.Where(s => s.IsDeleted != true).FirstOrDefault();
-
-
+        homeVM.Streaming = _appDbContext.Streamings.Where(s => s.IsDeleted != true).FirstOrDefault();
+        homeVM.TopRateds = _appDbContext.TopRateds.Include(t=>t.TopRatedCategories).ThenInclude(tc=>tc .Category).ToList();
+        homeVM.Categories = _appDbContext.Categories.ToList();
 
 
         return View(homeVM);
     }
 }
 
+ 
