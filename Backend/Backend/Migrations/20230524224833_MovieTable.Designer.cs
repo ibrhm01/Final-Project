@@ -4,6 +4,7 @@ using Backend.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230524224833_MovieTable")]
+    partial class MovieTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -274,32 +277,6 @@ namespace Backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Movies");
-                });
-
-            modelBuilder.Entity("Backend.Models.MovieCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("MovieId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("MovieId");
-
-                    b.ToTable("MovieCategories");
                 });
 
             modelBuilder.Entity("Backend.Models.Pricing", b =>
@@ -607,25 +584,6 @@ namespace Backend.Migrations
                     b.Navigation("Banner");
                 });
 
-            modelBuilder.Entity("Backend.Models.MovieCategory", b =>
-                {
-                    b.HasOne("Backend.Models.Category", "Category")
-                        .WithMany("MovieCategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Backend.Models.Movie", "Movie")
-                        .WithMany("MovieCategories")
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Movie");
-                });
-
             modelBuilder.Entity("Backend.Models.TopRatedCategory", b =>
                 {
                     b.HasOne("Backend.Models.Category", "Category")
@@ -663,14 +621,7 @@ namespace Backend.Migrations
 
             modelBuilder.Entity("Backend.Models.Category", b =>
                 {
-                    b.Navigation("MovieCategories");
-
                     b.Navigation("TopRatedCategories");
-                });
-
-            modelBuilder.Entity("Backend.Models.Movie", b =>
-                {
-                    b.Navigation("MovieCategories");
                 });
 
             modelBuilder.Entity("Backend.Models.TopRated", b =>

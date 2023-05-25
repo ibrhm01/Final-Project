@@ -26,7 +26,7 @@ public class HomeController : Controller
         homeVM.BestSeries = _appDbContext.BestSeries.Where(s => s.IsDeleted != true).ToList();
         homeVM.TrialTest = _appDbContext.TrialTests.Where(s => s.IsDeleted != true).FirstOrDefault();
         homeVM.Streaming = _appDbContext.Streamings.Where(s => s.IsDeleted != true).FirstOrDefault();
-        homeVM.TopRateds = _appDbContext.TopRateds.Include(t=>t.TopRatedCategories).ThenInclude(tc=>tc .Category).ToList();
+        homeVM.TopRateds = _appDbContext.TopRateds.Include(t=>t.TopRatedCategories).ThenInclude(tc=>tc.Category).ToList();
         homeVM.Categories = _appDbContext.Categories.ToList();
 
 

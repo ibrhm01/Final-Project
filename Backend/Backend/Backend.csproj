@@ -33,6 +33,8 @@
     <None Remove="Views\Contact\" />
     <None Remove="Views\Blog\" />
     <None Remove="Views\Pricing\" />
+    <None Remove="Views\Movie\" />
+    <None Remove="Views\TvSeries\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
@@ -45,5 +47,7 @@
     <Folder Include="Views\Contact\" />
     <Folder Include="Views\Blog\" />
     <Folder Include="Views\Pricing\" />
+    <Folder Include="Views\Movie\" />
+    <Folder Include="Views\TvSeries\" />
   </ItemGroup>
 </Project>

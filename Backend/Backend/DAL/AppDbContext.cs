@@ -26,7 +26,8 @@ namespace Backend.DAL
         public DbSet<Introduction> Introductions { get; set; }
         public DbSet<Pricing> Pricings { get; set; }
         public DbSet<Information> Informations { get; set; }
-
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<MovieCategory> MovieCategories { get; set; }
 
     }
 }
