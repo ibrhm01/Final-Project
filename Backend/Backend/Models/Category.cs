@@ -8,6 +8,8 @@ namespace Backend.Models
 		public Banner Banner { get; set; }
         public List<TopRatedCategory> TopRatedCategories { get; set; }
         public List<MovieCategory> MovieCategories { get; set; }
+        public List<TvSeriesCategories> TvSeriesCategories { get; set; }
+
 
     }
 }

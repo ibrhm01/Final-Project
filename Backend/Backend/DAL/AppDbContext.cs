@@ -28,6 +28,8 @@ namespace Backend.DAL
         public DbSet<Information> Informations { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<MovieCategory> MovieCategories { get; set; }
+        public DbSet<TvSeriesCategories> TvSeriesCategories { get; set; }
+
 
     }
 }
