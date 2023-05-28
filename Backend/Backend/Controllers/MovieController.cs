@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Backend.DAL;
+using Backend.Helpers;
+using Backend.Models;
 using Backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,14 +25,16 @@ namespace Backend.Controllers
         public IActionResult Index()
         {
             MovieVM movieVM = new();
-            movieVM.Movies = _appDbContext.Movies.ToList();
             movieVM.TrialTest = _appDbContext.TrialTests.FirstOrDefault();
             movieVM.Categories = _appDbContext.Categories.ToList();
-            movieVM.Movies = _appDbContext.Movies.Include(t => t.MovieCategories).ThenInclude(tc => tc.Category).ToList();
-
+            movieVM.Movies = _appDbContext.Movies
+                .Include(t => t.MovieCategories)
+                .ThenInclude(tc => tc.Category)
+                .ToList();
 
             return View(movieVM);
         }
+
     }
 }
 

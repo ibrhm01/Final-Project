@@ -25,14 +25,14 @@
             <div class="col-lg-8">
                 <div class="blog-post-item blog-details-wrap">
                     <div class="blog-post-thumb">
-                        <a href="blog-details.html"><img src="~/assets/img/blog/blog_thumb01.jpg" alt=""></a>
+                        <img src="~/assets/img/blog/@Model.Blog.ImageUrl" alt="">
                     </div>
                     <div class="blog-post-content">
                         <div class="blog-details-top-meta">
                             <span class="user"><i class="far fa-user"></i> by <a href="#">Admin</a></span>
                             <span class="date"><i class="far fa-clock"></i> 10 Mar 2021</span>
                         </div>
-                        <h2 class="title">Your</h2>
+                        <h2 class="title">@Model.Blog.Title</h2>
                         <p>
                             @Model.Blog.DescTop
                         </p>
@@ -43,12 +43,13 @@
                         </blockquote>
                         <div class="blog-img-wrap">
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <img src="~/assets/img/blog/blog_details_img01.jpg" alt="">
-                                </div>
-                                <div class="col-sm-6">
-                                    <img src="~/assets/img/blog/blog_details_img02.jpg" alt="">
-                                </div>
+                                @foreach (var item in Model.Blog.BlogContentImages)
+                                {
+                                    <div class="col-sm-6">
+                                        <img src="~/assets/img/blog/@item.ImageUrl" alt="">
+                                    </div>
+                                }
+
                             </div>
                         </div>
                         <p>
@@ -75,7 +76,7 @@
                         <img src="~/assets/img/blog/post_avatar_img.png" alt="img">
                     </div>
                     <div class="post-avatar-content">
-                        <h5>Thomas Herlihy</h5>
+                        <h5>@Model.Blog.QuoteAuthor</h5>
                         <p>
                             Printing and typetting industry. Lorem Ipsum has been the instry standrd the dummy
                             text ever since the, when an unknown printer took a galley .
@@ -173,7 +174,7 @@
                                 {
                                     <li class="rc-post-item">
                                         <div class="thumb">
-                                            <a href="blog-details.html"><img style="max-width:100%; max-height:100%;" src="assets/img/blog/@item.ImageUrl" alt=""></a>
+                                            <a href="blog-details.html"><img style="max-width:100%; max-height:100%;" src="~/assets/img/blog/@item.ImageUrl" alt=""></a>
                                         </div>
                                         <div class="content">
                                             <h5 class="title"><a asp-action="Detail" asp-route-id="@item.Id">@item.Title</a></h5>

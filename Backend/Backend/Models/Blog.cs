@@ -15,6 +15,8 @@ namespace Backend.Models
         public string Quote { get; set; }
         public string QuoteAuthor { get; set; }
         public string QuoteAuthorProfession { get; set; }
+        public List<BlogContentImage> BlogContentImages { get; set; }
+        
         //public string BlogAuthorImageUrl { get; set; }
         //public string BlogAuthorDesc{ get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using Backend.Helpers;
 using Backend.Models;
 
 namespace Backend.ViewModels
@@ -15,6 +16,7 @@ namespace Backend.ViewModels
 
         public List<Blog> RecentBlogs { get; set; }
 
+        public PaginationVM<Blog> Pagination { get; set; }
 
 
     }

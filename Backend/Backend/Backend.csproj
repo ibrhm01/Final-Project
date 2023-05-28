@@ -35,6 +35,7 @@
     <None Remove="Views\Pricing\" />
     <None Remove="Views\Movie\" />
     <None Remove="Views\TvSeries\" />
+    <None Remove="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
@@ -49,5 +50,6 @@
     <Folder Include="Views\Pricing\" />
     <Folder Include="Views\Movie\" />
     <Folder Include="Views\TvSeries\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

@@ -14,6 +14,9 @@ namespace Backend.ViewModels
         public Blog Blog { get; set; }
 
         public List<Blog> RecentBlogs { get; set; }
+
+        public List<BlogContentImage> BlogContentImages { get; set; }
+
     }
 }
 

@@ -60,11 +60,12 @@
                 <div class="pagination-wrap mt-60">
                     <nav>
                         <ul>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">Next</a></li>
+                            @for (int i = 1; i <= Model.Pagination.PageCount; i++)
+                            {
+                                <li class="page-item @(Model.Pagination.CurrentPage==i?"disabled":"")">
+                                    <a class="page-link" asp-action="index" asp-route-page="@i" tabindex="-1">@i</a>
+                                </li>
+                            }
                         </ul>
                     </nav>
                 </div>
