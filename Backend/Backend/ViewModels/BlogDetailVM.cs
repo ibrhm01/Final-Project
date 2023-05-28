@@ -3,7 +3,7 @@ using Backend.Models;
 
 namespace Backend.ViewModels
 {
-	public class BlogVM
+	public class BlogDetailVM
 	{
         public List<Category> Categories { get; set; }
 
@@ -11,12 +11,9 @@ namespace Backend.ViewModels
 
         public TrialTest TrialTest { get; set; }
 
-        public List<Blog> Blogs { get; set; }
+        public Blog Blog { get; set; }
 
         public List<Blog> RecentBlogs { get; set; }
-
-
-
     }
 }
 

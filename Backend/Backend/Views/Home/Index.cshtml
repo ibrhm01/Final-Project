@@ -1,5 +1,4 @@
-﻿@using Backend.ViewModels
-@using Microsoft.AspNetCore.Html;
+﻿@using Microsoft.AspNetCore.Html;
 @model HomeVM
 
 @{
@@ -75,7 +74,7 @@
                             {
                                 <div class="movie-item mb-50" data-id="@movie.Type.Name">
                                     <div class="movie-poster">
-                                        <a href="movie-details.html"><img src="assets/img/poster/@movie.ImageUrl" alt=""></a>
+                                        <a href="movie-details.html"><img src="~/assets/img/poster/@movie.ImageUrl" alt=""></a>
                                     </div>
                                     <div class="movie-content">
                                         <div class="top">
@@ -108,7 +107,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="services-img-wrap">
-                    <img src="assets/img/images/@Model.Service.ImageUrl" alt="">
+                    <img src="~/assets/img/images/@Model.Service.ImageUrl" alt="">
                     <a href="assets/img/images/@Model.Service.ImageUrl" class="download-btn" download>Download <img src="fonts/download.svg" alt=""></a>
                 </div>
             </div>
@@ -180,7 +179,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer  @foreach (var topRatedCategory in topRated.TopRatedCategories) {  @Html.Raw(topRatedCategory.Category.Name + " ");}">
                     <div class="movie-item mb-60">
                         <div class="movie-poster">
-                            <a href="movie-details.html"><img src="assets/img/poster/@topRated.ImageUrl" alt=""></a>
+                            <a href="movie-details.html"><img src="~/assets/img/poster/@topRated.ImageUrl" alt=""></a>
                         </div>
                         <div class="movie-content">
                             <div class="top">
@@ -232,7 +231,7 @@
             </div>
             <div class="col-xl-7 col-lg-6">
                 <div class="live-movie-img wow fadeInRight" data-wow-delay=".2s" data-wow-duration="1.8s">
-                    <img src="assets/img/images/@Model.Streaming.ImageUrl" alt="">
+                    <img src="~/assets/img/images/@Model.Streaming.ImageUrl" alt="">
                 </div>
             </div>
         </div>
@@ -257,7 +256,7 @@
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="movie-item mb-50">
                         <div class="movie-poster">
-                            <a href="movie-details.html"><img src="assets/img/poster/@bestSeries.ImageUrl" alt=""></a>
+                            <a href="movie-details.html"><img src="~/assets/img/poster/@bestSeries.ImageUrl" alt=""></a>
                         </div>
                         <div class="movie-content">
                             <div class="top">

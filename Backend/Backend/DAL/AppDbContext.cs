@@ -27,9 +27,15 @@ namespace Backend.DAL
         public DbSet<Pricing> Pricings { get; set; }
         public DbSet<Information> Informations { get; set; }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<TvSeries> TvSeries { get; set; }
         public DbSet<MovieCategory> MovieCategories { get; set; }
         public DbSet<TvSeriesCategories> TvSeriesCategories { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Blog>().Property(t => t.Date).HasDefaultValue(DateTime.Now);
+        }
 
     }
 }

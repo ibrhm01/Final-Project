@@ -1,0 +1,17 @@
+﻿@model List<Tag>
+
+<div class="widget blog-widget">
+    <div class="widget-title mb-30">
+        <h5 class="title">Tag Post</h5>
+    </div>
+    <div class="tag-list">
+        <ul>
+            @foreach (var item in Model)
+            {
+
+                <li><a href="#">@item.Name</a></li>
+
+            }
+        </ul>
+    </div>
+</div>
