@@ -32,7 +32,8 @@ namespace Backend.DAL
         public DbSet<TvSeriesCategories> TvSeriesCategories { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<BlogContentImage> BlogContentImages { get; set; }
-
+        public DbSet<Season> Seasons { get; set; }
+        public DbSet<Episode> Episodes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

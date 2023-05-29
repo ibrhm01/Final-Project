@@ -68,12 +68,12 @@
                                     <i class="fas fa-star"></i>
                                 </li>
                                 <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a></li>
-                                <li><a href="movie-details.html" class="btn">Details</a></li>
+                                <li><a asp-action="Detail" asp-route-id="@tvSeries.Id" class="btn">Details</a></li>
                             </ul>
                         </div>
                         <div class="movie-content">
                             <div class="top">
-                                <h5 class="title"><a href="movie-details.html">@tvSeries.Name</a></h5>
+                                <h5 class="title"><a asp-action="Detail" asp-route-id="@tvSeries.Id">@tvSeries.Name</a></h5>
                                 <span class="date">@tvSeries.ReleaseDate.ToString("yyyy")</span>
                             </div>
                             <div class="bottom">

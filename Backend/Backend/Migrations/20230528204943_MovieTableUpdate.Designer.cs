@@ -4,6 +4,7 @@ using Backend.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230528204943_MovieTableUpdate")]
+    partial class MovieTableUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,7 +171,7 @@ namespace Backend.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 5, 29, 4, 42, 1, 23, DateTimeKind.Local).AddTicks(4310));
+                        .HasDefaultValue(new DateTime(2023, 5, 29, 0, 49, 43, 864, DateTimeKind.Local).AddTicks(7990));
 
                     b.Property<string>("DescBottom")
                         .IsRequired()
@@ -259,34 +262,6 @@ namespace Backend.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Backend.Models.Episode", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Duration")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SeasonId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SeasonId");
-
-                    b.ToTable("Episodes");
-                });
-
             modelBuilder.Entity("Backend.Models.Information", b =>
                 {
                     b.Property<int>("Id")
@@ -355,10 +330,6 @@ namespace Backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("About")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
@@ -382,14 +353,6 @@ namespace Backend.Migrations
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TeaserUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -458,27 +421,6 @@ namespace Backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pricings");
-                });
-
-            modelBuilder.Entity("Backend.Models.Season", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("TvSeriesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TvSeriesId");
-
-                    b.ToTable("Seasons");
                 });
 
             modelBuilder.Entity("Backend.Models.Service", b =>
@@ -683,10 +625,6 @@ namespace Backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("About")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
@@ -710,14 +648,6 @@ namespace Backend.Migrations
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TeaserUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -834,17 +764,6 @@ namespace Backend.Migrations
                     b.Navigation("Banner");
                 });
 
-            modelBuilder.Entity("Backend.Models.Episode", b =>
-                {
-                    b.HasOne("Backend.Models.Season", "Season")
-                        .WithMany("Episodes")
-                        .HasForeignKey("SeasonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Season");
-                });
-
             modelBuilder.Entity("Backend.Models.MovieCategory", b =>
                 {
                     b.HasOne("Backend.Models.Category", "Category")
@@ -862,17 +781,6 @@ namespace Backend.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Movie");
-                });
-
-            modelBuilder.Entity("Backend.Models.Season", b =>
-                {
-                    b.HasOne("Backend.Models.TvSeries", "TvSeries")
-                        .WithMany("Seasons")
-                        .HasForeignKey("TvSeriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TvSeries");
                 });
 
             modelBuilder.Entity("Backend.Models.TopRatedCategory", b =>
@@ -948,11 +856,6 @@ namespace Backend.Migrations
                     b.Navigation("MovieCategories");
                 });
 
-            modelBuilder.Entity("Backend.Models.Season", b =>
-                {
-                    b.Navigation("Episodes");
-                });
-
             modelBuilder.Entity("Backend.Models.TopRated", b =>
                 {
                     b.Navigation("TopRatedCategories");
@@ -960,8 +863,6 @@ namespace Backend.Migrations
 
             modelBuilder.Entity("Backend.Models.TvSeries", b =>
                 {
-                    b.Navigation("Seasons");
-
                     b.Navigation("TvSeriesCategories");
                 });
 

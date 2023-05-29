@@ -35,6 +35,17 @@ namespace Backend.Controllers
             return View(movieVM);
         }
 
+        public IActionResult Detail(int id)
+        {
+            MovieDetailVM movieDetailVM = new();
+            movieDetailVM.Movie = _appDbContext.Movies.Where(m=>m.Id==id).Include(m=>m.MovieCategories).ThenInclude(mc=>mc.Category).FirstOrDefault();
+            movieDetailVM.Movies = _appDbContext.Movies.Where(m => m.Id != id).Include(m => m.MovieCategories).ThenInclude(mc => mc.Category).ToList();
+
+
+            movieDetailVM.TrialTest = _appDbContext.TrialTests.FirstOrDefault();
+
+            return View(movieDetailVM);
+        }
     }
 }
 

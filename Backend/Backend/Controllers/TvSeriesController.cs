@@ -32,6 +32,23 @@ namespace Backend.Controllers
 
             return View(tvSeriesVM);
         }
+
+        public IActionResult Detail(int id)
+        {
+            TvSeriesDetailVM tvSeriesDetailVM = new();
+            tvSeriesDetailVM.TvSeries = _appDbContext.TvSeries
+                .Where(ts=>ts.Id==id)
+                .Include(t=>t.Seasons)
+                .ThenInclude(s=>s.Episodes)
+                .Include(t => t.TvSeriesCategories)
+                .ThenInclude(tc => tc.Category)
+                .FirstOrDefault();
+            tvSeriesDetailVM.TrialTest = _appDbContext.TrialTests.FirstOrDefault();
+            tvSeriesDetailVM.Categories = _appDbContext.Categories.ToList();
+            tvSeriesDetailVM.TvSeriesList = _appDbContext.TvSeries.Include(t => t.TvSeriesCategories).ThenInclude(tc => tc.Category).ToList();
+            return View(tvSeriesDetailVM);
+        }
+
     }
 }
 

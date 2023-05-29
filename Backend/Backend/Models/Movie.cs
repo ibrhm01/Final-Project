@@ -9,6 +9,10 @@ namespace Backend.Models
         public string Quality { get; set; }
         public int Duration { get; set; }
         public double Point { get; set; }
+        public string TeaserUrl { get; set; }
+        public string Status { get; set; }
+        public string About { get; set; }
+
         public List<MovieCategory> MovieCategories { get; set; }
 
     }
