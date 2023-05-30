@@ -42,6 +42,15 @@
     <None Remove="Services\Interfaces\" />
     <None Remove="ViewModels\User\" />
     <None Remove="Views\Account\" />
+    <None Remove="Areas\" />
+    <None Remove="Areas\AdminArea\" />
+    <None Remove="Areas\AdminArea\Controllers\" />
+    <None Remove="Areas\AdminArea\Views\" />
+    <None Remove="Areas\AdminArea\Views\Dashboard\" />
+    <None Remove="Areas\AdminArea\Views\Shared\" />
+    <None Remove="Areas\AdminArea\Views\Movie\" />
+    <None Remove="Extensions\" />
+    <None Remove="Areas\AdminArea\Views\Pricing\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
@@ -61,5 +70,14 @@
     <Folder Include="Services\Interfaces\" />
     <Folder Include="ViewModels\User\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\AdminArea\" />
+    <Folder Include="Areas\AdminArea\Controllers\" />
+    <Folder Include="Areas\AdminArea\Views\" />
+    <Folder Include="Areas\AdminArea\Views\Dashboard\" />
+    <Folder Include="Areas\AdminArea\Views\Shared\" />
+    <Folder Include="Areas\AdminArea\Views\Movie\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Areas\AdminArea\Views\Pricing\" />
   </ItemGroup>
 </Project>

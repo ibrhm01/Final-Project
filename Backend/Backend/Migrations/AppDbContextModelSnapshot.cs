@@ -237,7 +237,7 @@ namespace Backend.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 5, 29, 21, 47, 40, 884, DateTimeKind.Local).AddTicks(4690));
+                        .HasDefaultValue(new DateTime(2023, 5, 31, 0, 28, 31, 407, DateTimeKind.Local).AddTicks(5280));
 
                     b.Property<string>("DescBottom")
                         .IsRequired()
