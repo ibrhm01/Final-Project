@@ -3380,3 +3380,102 @@ label {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+.login-form-container {
+    background: #F0F3F4 none repeat scroll 0 0;
+    overflow: hidden;
+    padding: 37px 40px;
+    text-align: left;
+}
+
+.login-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .login-text h2 {
+        color: #444;
+        font-size: 30px;
+        margin-bottom: 5px;
+        text-transform: capitalize;
+    }
+
+    .login-text span {
+        font-size: 15px;
+    }
+
+.login-form-container input {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #666666;
+    margin-bottom: 20px;
+    font-size: 14px;
+    height: 40px;
+    padding-left: 10px;
+    width: 100%;
+    border: medium none rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+    .login-form-container input::-moz-placeholder {
+        color: #666666;
+    }
+
+    .login-form-container input::-webkit-input-placeholder {
+        color: #666666;
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+
+.login-toggle-btn {
+    padding-top: 20px;
+}
+
+.login-form-container input[type="checkbox"] {
+    height: 15px;
+    margin: 0;
+    position: relative;
+    top: 1px;
+    width: 17px;
+}
+
+.login-form-container label {
+    color: #606060;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.login-toggle-btn > a {
+    color: #EC1C23;
+    float: right;
+    -webkit-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+    .login-toggle-btn > a:hover {
+        color: #444;
+    }
+
+.button-box .default-btn {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #EC1C23;
+    border-radius: 30px;
+    color: #EC1C23;
+    font-size: 14px;
+    margin-top: 40px;
+    padding: 8px 36px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+
+    .button-box .default-btn:after, .button-box .default-btn:before {
+        display: none
+    }
+
+    .button-box .default-btn:hover {
+        background-color: #EC1C23;
+        border: 1px solid #EC1C23;
+        color: #fff;
+    }

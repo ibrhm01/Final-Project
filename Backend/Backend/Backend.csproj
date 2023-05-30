@@ -21,6 +21,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="MailKit" Version="4.0.0" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="DAL\" />
@@ -36,6 +38,10 @@
     <None Remove="Views\Movie\" />
     <None Remove="Views\TvSeries\" />
     <None Remove="Helpers\" />
+    <None Remove="Services\" />
+    <None Remove="Services\Interfaces\" />
+    <None Remove="ViewModels\User\" />
+    <None Remove="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
@@ -51,5 +57,9 @@
     <Folder Include="Views\Movie\" />
     <Folder Include="Views\TvSeries\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="ViewModels\User\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
 </Project>

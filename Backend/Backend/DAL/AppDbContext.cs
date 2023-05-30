@@ -1,11 +1,12 @@
 ﻿using System;
 using Backend.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Plugins;
 
 namespace Backend.DAL
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
@@ -38,6 +39,7 @@ namespace Backend.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Blog>().Property(t => t.Date).HasDefaultValue(DateTime.Now);
+            base.OnModelCreating(modelBuilder);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using Backend.DAL;
+﻿using Backend;
+using Backend.DAL;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 });
 
-//builder.Services.BackendProjectServiceRegistration();
+builder.Services.BackendServiceRegistration();
 
 
 var app = builder.Build();

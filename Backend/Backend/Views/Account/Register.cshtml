@@ -1,0 +1,87 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="breadcrumb-area breadcrumb-bg" data-background="../assets/img/bg/breadcrumb_bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="title">Register</h2>
+                    @*<nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Login</a></li>
+                            </ol>
+                        </nav>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Banner Area End -->
+<!-- Login start -->
+
+<div class="login-area pt-150 pb-150" data-background="../assets/img/bg/episode_bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 text-center">
+                <div class="login">
+                    <div class="login-form-container">
+                        <div class="login-text">
+                            <h2>Sign Up</h2>
+                            <span>Please sign up using account detail bellow.</span>
+                        </div>
+                        <div class="login-form">
+                            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                            <form method="post">
+
+                                <div class="form-group">
+                                    <input asp-for="FullName" type="text" placeholder="FullName">
+                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <input asp-for="UserName" type="text" placeholder="UserName">
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <input asp-for="Email" type="email" placeholder="Email">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <input asp-for="Password" type="password" placeholder="Password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input asp-for="RePassword" type="password" placeholder="RePassword">
+                                    <span asp-validation-for="RePassword" class="text-danger"></span>
+                                </div>
+
+                                <div class="button-box">
+                                    @*<div class="login-toggle-btn">
+                                        <input asp-for="RememberMe" type="checkbox" id="remember">
+                                        <label for="remember">Remember me</label>
+                                        <a asp-controller="Action" asp-action="ForgotPassword">Forgot Password?</a>*@
+                                    @*</div>*@
+                                    <button type="submit" class="default-btn">Sign Up</button>
+                                    <div class="text-center mt-4 font-weight-light">
+                                        Already have an account? <a asp-action="Login" class="text-primary">Login</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login end -->
+<!-- Subscribe End -->
+@section Scripts{
+    <partial name="_ValidationPartial"></partial>
+}

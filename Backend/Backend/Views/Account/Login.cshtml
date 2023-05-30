@@ -1,0 +1,73 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="breadcrumb-area breadcrumb-bg" data-background="../assets/img/bg/breadcrumb_bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-content">
+                    <h2 class="title">Login</h2>
+                    @*<nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Login</a></li>
+                            </ol>
+                        </nav>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Banner Area End -->
+<!-- Login start -->
+
+<div class="login-area pt-150 pb-150" data-background="../assets/img/bg/episode_bg.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 text-center">
+                <div class="login">
+                    <div class="login-form-container">
+                        <div class="login-text">
+                            <h2>login</h2>
+                            <span>Please login using account detail bellow.</span>
+                        </div>
+                        <div class="login-form">
+                            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                            <form method="post">
+
+                                <div class="form-group">
+                                    <input asp-for="UserNameOrEmail" type="text" placeholder="Username Or Email">
+                                    <span asp-validation-for="UserNameOrEmail" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <input asp-for="Password" type="password" placeholder="Password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="button-box">
+                                    <div class="login-toggle-btn">
+                                        <input asp-for="RememberMe" type="checkbox" id="remember">
+                                        <label for="remember">Remember me</label>
+                                        <a asp-controller="Account" asp-action="ForgotPassword">Forgot Password?</a>
+                                    </div>
+                                    <button type="submit" class="default-btn">Login</button>
+                                    <div class="text-center mt-4 font-weight-light">
+                                        You don't have an account? <a asp-controller="Account" asp-action="Register" style="color: #444">Register</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login end -->
+<!-- Subscribe End -->
+@section Scripts{
+    <partial name="_ValidationPartial"></partial>
+}
