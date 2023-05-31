@@ -59,19 +59,22 @@
                     background-color: ##6b757c;
                 }
             </style>
-            <div class="col-lg-12 d-flex justify-content-center mt-4">
-                <nav aria-label="...">
-                    <ul class="pagination pagination-md">
-                        @for (int i = 1; i <= Model.PageCount; i++)
-                        {
-                            <li class="page-item @(Model.CurrentPage==i?"disabled":"")">
-                                <a class="page-link" asp-action="index" asp-route-page="@i" tabindex="-1">@i</a>
-                            </li>
-                        }
+            @if (Model.PageCount > 1)
+            {
+                <div class="col-lg-12 d-flex justify-content-center mt-4">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-md">
+                            @for (int i = 1; i <= Model.PageCount; i++)
+                            {
+                                <li class="page-item @(Model.CurrentPage == i ? "disabled" : "")">
+                                    <a class="page-link" asp-action="index" asp-route-page="@i" tabindex="-1">@i</a>
+                                </li>
+                            }
 
-                    </ul>
-                </nav>
-            </div>
+                        </ul>
+                    </nav>
+                </div>
+            }
         </div>
     </div>
 </div>

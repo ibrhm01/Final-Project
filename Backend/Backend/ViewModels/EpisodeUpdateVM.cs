@@ -1,15 +1,12 @@
 ﻿using System;
-namespace Backend.Models
+namespace Backend.ViewModels
 {
-	public class Episode:BaseEntity
+	public class EpisodeUpdateVM
 	{
-
-		public string Name { get; set; }
+        public string Name { get; set; }
         public int EpisodeNumber { get; set; }
         public int Duration { get; set; }
         public int SeasonId { get; set; }
-        public Season Season { get; set; }
-
     }
 }
 

@@ -4,6 +4,7 @@ using Backend.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230530215739_SeasonTableUpdate")]
+    partial class SeasonTableUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,7 +240,7 @@ namespace Backend.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 5, 31, 2, 1, 43, 664, DateTimeKind.Local).AddTicks(70));
+                        .HasDefaultValue(new DateTime(2023, 5, 31, 1, 57, 39, 604, DateTimeKind.Local).AddTicks(1190));
 
                     b.Property<string>("DescBottom")
                         .IsRequired()
@@ -337,9 +340,6 @@ namespace Backend.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Duration")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EpisodeNumber")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")

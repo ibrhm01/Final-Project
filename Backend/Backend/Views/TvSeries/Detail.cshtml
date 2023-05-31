@@ -72,22 +72,21 @@
                     </div>
                     <div class="episode-watch-wrap">
                         <div class="accordion" id="accordionExample">
-                            @for (int i = 0; i < Model.TvSeries.Seasons.Count; i++)
+                            @foreach (var season in Model.TvSeries.Seasons)
                             {
                                 <div class="card">
-                                    <div class="card-header" id="@(i+1)">
-                                        <button class="btn-block text-left" type="button" data-toggle="collapse" data-target="#@(i+1)" aria-expanded="true" aria-controls="@(i+1)">
-                                            <span class="season">Season @(i+1)</span>
-                                            <span class="video-count">@Model.TvSeries.Seasons[i].Episodes.Count Full Episodes</span>
+                                    <div class="card-header" id="">
+                                        <button class="btn-block text-left" type="button" data-toggle="collapse" data-target="#" aria-expanded="true" aria-controls="">
+                                            <span class="season">Season @season.SeasonNumber</span>
+                                            <span class="video-count">@season.Episodes.Count Full Episodes</span>
                                         </button>
                                     </div>
-                                    <div id="@(i+1)" class="collapse show" aria-labelledby="@(i+1)" data-parent="#accordionExample">
+                                    <div id="" class="collapse show" aria-labelledby="" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <ul>
-                                                @for (int j = 0; j < Model.TvSeries.Seasons[i].Episodes.Count; j++)
+                                                @foreach (var episode in season.Episodes)
                                                 {
-
-                                                    <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video"><i class="fas fa-play"></i> Episode @(j+1) -  @Model.TvSeries.Seasons[i].Episodes[j].Name</a> <span class="duration"><i class="far fa-clock"></i> @Model.TvSeries.Seasons[i].Episodes[j].Duration Min</span></li>
+                                                    <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video"><i class="fas fa-play"></i> Episode @episode.EpisodeNumber-  @episode.Name</a> <span class="duration"><i class="far fa-clock"></i> @episode.Duration Min</span></li>
                                                 }
                                             </ul>
                                         </div>
