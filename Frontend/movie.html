@@ -87,93 +87,81 @@
         <!-- header-area -->
         <header>
             <div id="sticky-header" class="menu-area transparent-header">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
-                    <div class="menu-wrap">
-                      <nav class="menu-nav show">
-                        <div class="logo">
-                          <a href="index.html">
-                            <img src="assets/img/logo/logo.png" alt="Logo" />
-                          </a>
+                <div class="container custom-container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                            <div class="menu-wrap">
+                                <nav class="menu-nav show">
+                                    <div class="logo">
+                                        <a href="index.html">
+                                            <img src="assets/img/logo/logo.png" alt="Logo">
+                                        </a>
+                                    </div>
+                                    <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                        <ul class="navigation">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li class="active"><a href="movie.html">Movie</a></li>
+                                            <li><a href="tvShows.html">tv show</a></li>
+                                            <li><a href="pricing.html">Pricing</a></li>
+                                            <li><a href="blog.html">blog</a></li>
+                                            <li><a href="contacts.html">contacts</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-action d-none d-md-block">
+                                        <ul>
+                                            <li class="header-search"><a href="#" data-toggle="modal" data-target="#search-modal"><i class="fas fa-search"></i></a></li>
+                                           
+                                            <li class="header-btn"><a href="#" class="btn">Sign In</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+
+                            <!-- Mobile Menu  -->
+                            <div class="mobile-menu">
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+
+                                <nav class="menu-box">
+                                    <div class="nav-logo"><a href="index.html"><img src="assets/img/logo/logo.png" alt="" title=""></a>
+                                    </div>
+                                    <div class="menu-outer">
+                                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                    
+                                       
+                                    </div>
+                                    <div class="social-links">
+                                        <ul class="clearfix">
+                                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="menu-backdrop"></div>
+                            <!-- End Mobile Menu -->
+
+                            <!-- Modal Search -->
+                            <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <form>
+                                            <input type="text" placeholder="Search here...">
+                                            <button><i class="fas fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal Search-end -->
+
                         </div>
-                        <div class="navbar-wrap main-menu d-none d-lg-flex">
-                          <ul class="navigation">
-                            <li><a href="index.html">HOME</a></li>
-                            <li class="active"><a href="movie.html">MOVIE</a></li>
-                            <li><a href="tvShows.html">TV SHOW</a></li>
-                            <li><a href="pricing.html">PRICING</a></li>
-                            <li><a href="blog.html">BLOG</a></li>
-                            <li><a href="contacts.html">CONTACTS</a></li>
-                          </ul>
-                        </div>
-                        <div class="header-action d-none d-md-block">
-                          <ul>
-                            <li class="header-search">
-                              <a
-                                href="#"
-                                data-toggle="modal"
-                                data-target="#search-modal"
-                                ><i class="fas fa-search"></i
-                              ></a>
-                            </li>
-                            <li class="header-btn">
-                              <a href="#" class="btn">SIGN IN</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </nav>
                     </div>
-      
-                    <!-- Mobile Menu  -->
-                    <div class="mobile-menu">
-                      <div class="close-btn"><i class="fas fa-times"></i></div>
-      
-                      <nav class="menu-box">
-                        <div class="nav-logo">
-                          <a href="index.html"
-                            ><img src="assets/img/logo/logo2.png" alt="" title=""
-                          /></a>
-                        </div>
-                        <div class="menu-outer">
-                          <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-                        </div>
-                        <div class="social-links">
-                            <li><a href="https://twitter.com"><span class="fab fa-twitter"></span></a></li>
-                            <li><a href="https://www.facebook.com"><span class="fab fa-facebook-square"></span></a></li>
-                            <li><a href="https://www.pinterest.com"><span class="fab fa-pinterest-p"></span></a></li>
-                            <li> <a href="https://www.instagram.com"><span class="fab fa-instagram"></span></a></li>
-                            <li><a href="https://www.youtube.com"><span class="fab fa-youtube"></span></a></li>
-                        </div>
-                      </nav>
-                    </div>
-                    <!-- <div class="menu-backdrop"></div> -->
-                    <!-- End Mobile Menu -->
-      
-                    <!-- Modal Search -->
-                    <div
-                      class="modal fade"
-                      id="search-modal"
-                      tabindex="-1"
-                      role="dialog"
-                      aria-hidden="true"
-                    >
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <form>
-                            <input type="text" placeholder="Search here..." />
-                            <button><i class="fas fa-search"></i></button>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Modal Search-end -->
-                  </div>
                 </div>
-              </div>
             </div>
-          </header>
+        </header>
         <!-- header-area-end -->
 
 
@@ -242,12 +230,12 @@
                                             <i class="fas fa-star"></i>
                                         </li>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a></li>
-                                        <li><a href="movie-details.html" class="btn">Details</a></li>
+                                        <li><a href="movieDetail.html" class="btn">Details</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html">Women's Day</a></h5>
+                                        <h5 class="title"><a href="movieDetail.html">Women's Day</a></h5>
                                         <span class="date">2021</span>
                                     </div>
                                     <div class="bottom">
@@ -275,12 +263,12 @@
                                             <i class="fas fa-star"></i>
                                         </li>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a></li>
-                                        <li><a href="movie-details.html" class="btn">Details</a></li>
+                                        <li><a href="movieDetail.html" class="btn">Details</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html">The Perfect Match</a></h5>
+                                        <h5 class="title"><a href="movieDetail.html">The Perfect Match</a></h5>
                                         <span class="date">2021</span>
                                     </div>
                                     <div class="bottom">
@@ -308,12 +296,12 @@
                                             <i class="fas fa-star"></i>
                                         </li>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a></li>
-                                        <li><a href="movie-details.html" class="btn">Details</a></li>
+                                        <li><a href="movieDetail.html" class="btn">Details</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html">The Dog Woof</a></h5>
+                                        <h5 class="title"><a href="movieDetail.html">The Dog Woof</a></h5>
                                         <span class="date">2021</span>
                                     </div>
                                     <div class="bottom">
@@ -341,12 +329,12 @@
                                             <i class="fas fa-star"></i>
                                         </li>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a></li>
-                                        <li><a href="movie-details.html" class="btn">Details</a></li>
+                                        <li><a href="movieDetail.html" class="btn">Details</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html">The Easy Reach</a></h5>
+                                        <h5 class="title"><a href="movieDetail.html">The Easy Reach</a></h5>
                                         <span class="date">2021</span>
                                     </div>
                                     <div class="bottom">
@@ -374,12 +362,12 @@
                                             <i class="fas fa-star"></i>
                                         </li>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a></li>
-                                        <li><a href="movie-details.html" class="btn">Details</a></li>
+                                        <li><a href="movieDetail.html" class="btn">Details</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html">The Cooking</a></h5>
+                                        <h5 class="title"><a href="movieDetail.html">The Cooking</a></h5>
                                         <span class="date">2021</span>
                                     </div>
                                     <div class="bottom">
@@ -407,12 +395,12 @@
                                             <i class="fas fa-star"></i>
                                         </li>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a></li>
-                                        <li><a href="movie-details.html" class="btn">Details</a></li>
+                                        <li><a href="movieDetail.html" class="btn">Details</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html">The Hikaru Night</a></h5>
+                                        <h5 class="title"><a href="movieDetail.html">The Hikaru Night</a></h5>
                                         <span class="date">2021</span>
                                     </div>
                                     <div class="bottom">
@@ -440,12 +428,12 @@
                                             <i class="fas fa-star"></i>
                                         </li>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a></li>
-                                        <li><a href="movie-details.html" class="btn">Details</a></li>
+                                        <li><a href="movieDetail.html" class="btn">Details</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html">The Life Quotes</a></h5>
+                                        <h5 class="title"><a href="movieDetail.html">The Life Quotes</a></h5>
                                         <span class="date">2021</span>
                                     </div>
                                     <div class="bottom">
@@ -473,12 +461,12 @@
                                             <i class="fas fa-star"></i>
                                         </li>
                                         <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a></li>
-                                        <li><a href="movie-details.html" class="btn">Details</a></li>
+                                        <li><a href="movieDetail.html" class="btn">Details</a></li>
                                     </ul>
                                 </div>
                                 <div class="movie-content">
                                     <div class="top">
-                                        <h5 class="title"><a href="movie-details.html">The Beachball</a></h5>
+                                        <h5 class="title"><a href="movieDetail.html">The Beachball</a></h5>
                                         <span class="date">2021</span>
                                     </div>
                                     <div class="bottom">
@@ -603,7 +591,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6">
                             <div class="copyright-text">
-                                <p>Copyright &copy; 2021. All Rights Reserved By <a href="index.html">Movflx</a></p>
+                                <p>Lorem Ipsum is simply dummy text of the printing </p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">

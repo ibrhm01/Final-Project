@@ -32,7 +32,7 @@
                         </div>
                         <div class="blog-post-content">
                             <span class="date"><i class="far fa-clock"></i> @item.Date.ToString("dd MMM yyyy")</span>
-                            <h2 class="title"><a asp-action="Detail" asp-route-id="@item.Id">Your Free Movie Streaming Purposes</a></h2>
+                            <h2 class="title"><a asp-action="Detail" asp-route-id="@item.Id">@item.Title</a></h2>
                             <p>
                                 @if (item.DescTop.Length >= 411)
                                 {
