@@ -5,8 +5,9 @@
 
     //search
     $(document).on('keyup', '#input-search', function () {
+        console.log($(this).val());
         let inputValue = $(this).val().trim();
-        $("#searchList li").slice(1).remove();
+        $("#searchList li").slice(0).remove();
         $.ajax({
             url: "/Common/Search?search=" + inputValue,
             method: "get",
@@ -14,7 +15,7 @@
                 $("#searchList").append(res)
             }
         })
-    })
+    });
 
     /*=============================================
         =    		 Preloader			      =
@@ -38,7 +39,7 @@
         $(this).css("background-image", "url(" + $(this).attr("data-background") + ")")
     })
 
-    
+
 
 
     /*=============================================
@@ -308,7 +309,7 @@
 
 
 
-    
+
 
 
     /*=============================================
