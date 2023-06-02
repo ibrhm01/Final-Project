@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Backend.ViewModels
 {
-    public class MovieCreateVM
-    {
+	public class UpcomingCreateVM
+	{
         [Required]
         public IFormFile Photo { get; set; }
         [Required]
@@ -12,7 +12,6 @@ namespace Backend.ViewModels
         [Required]
         public string Name { get; set; }
         [Required]
-        [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         [Required]
         public string Quality { get; set; }
@@ -21,14 +20,7 @@ namespace Backend.ViewModels
         [Required]
         public double Point { get; set; }
         [Required]
-        public string TeaserUrl { get; set; }
-        [Required]
-        public string Status { get; set; }
-        [Required]
-        public string About { get; set; }
-        [Required]
-        public List<int> CategoryIds { get; set; }
-
+        public int TypeId { get; set; }
     }
 }
 

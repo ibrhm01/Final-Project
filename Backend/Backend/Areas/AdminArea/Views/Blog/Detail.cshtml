@@ -1,0 +1,41 @@
+﻿@using Backend.Helpers
+@model Upcoming
+
+<style>
+    td {
+        white-space: pre-wrap !important;
+    }
+</style>
+<div class="col-lg-12 stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-contextual">
+                    <thead>
+                        <tr>
+                            <th> Image </th>
+                            <th> Name </th>
+                            <th> Release Date </th>
+                            <th> Quality </th>
+                            <th> Duration </th>
+                            <th> Point </th>
+                            <th> Type </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-color">
+                            <td> <img src="~/assets/img/poster/@Model.ImageUrl" style="height:80px; width:80px;" /> </td>
+                            <td> @Model.Name </td>
+                            <td> @Model.ReleaseDate.ToString("yyyy") </td>
+                            <td> @Model.Quality </td>
+                            <td> @Model.Duration </td>
+                            <td> @Model.Point </td>
+                            <td> @Model.Type.Name </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

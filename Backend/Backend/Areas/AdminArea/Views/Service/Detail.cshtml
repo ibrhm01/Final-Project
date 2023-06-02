@@ -1,0 +1,41 @@
+﻿@using Backend.Helpers
+@model Service
+
+<style>
+    td {
+        white-space: pre-wrap !important;
+    }
+</style>
+<div class="col-lg-12 stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-contextual">
+                    <thead>
+                        <tr>
+                            <th> Image </th>
+                            <th> Title </th>
+                            <th> Description </th>
+                            <th> SubDescription1 </th>
+                            <th> SubDescription2 </th>
+                            <th> SubTitle1 </th>
+                            <th> SubTitle2 </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-color">
+                            <td><img src="~/assets/img/images/@Model.ImageUrl" style="height:80px; width:80px;" /></td>
+                            <td> @Model.Title </td>
+                            <td> @Model.Description </td>
+                            <td> @Model.SubDescription1 </td>
+                            <td> @Model.SubDescription2 </td>
+                            <td> @Model.SubTitle1 </td>
+                            <td> @Model.SubTitle2 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

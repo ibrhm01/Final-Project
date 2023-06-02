@@ -7,13 +7,14 @@
 
 
 <!-- banner-area -->
-<section class="banner-area banner-bg" data-background="assets/img/banner/banner_bg01.jpg">
+<section class="banner-area banner-bg" data-background="assets/img/banner/@Model.Banner.ImageUrl">
     <div class="container custom-container">
         <div class="row">
             <div class="col-xl-6 col-lg-8">
                 <div class="banner-content">
                     <h6 class="sub-title wow fadeInUp" data-wow-delay=".2s" data-wow-duration="1.8s">@Model.Banner.BrandName</h6>
                     <h2 class="title wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.8s">@Model.Banner.Description</h2>
+                    <h6 style="font-size:25px" class="title wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.8s">@Model.Banner.Title</h6>
                     <div class="banner-meta wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1.8s">
                         <ul>
                             <li class="quality">
@@ -79,7 +80,7 @@
                                     <div class="movie-content">
                                         <div class="top">
                                             <h5 class="title"><a href="movie-details.html">@movie.Name</a></h5>
-                                            <span class="date">@movie.ReleaseDate</span>
+                                            <span class="date">@Model.Banner.ReleaseDate.ToString("yyyy")</span>
                                         </div>
                                         <div class="bottom">
                                             <ul>

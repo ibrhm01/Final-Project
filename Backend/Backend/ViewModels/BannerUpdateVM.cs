@@ -1,19 +1,31 @@
 ﻿using System;
-namespace Backend.Models
-{
-	public class Banner:BaseEntity
-	{
-        public string ImageUrl { get; set; }
-        public string BrandName { get; set; }
-        public string Description { get; set; }
-        public string Title { get; set; }
-        public string Quality { get; set; }
-        public string Status { get; set; }
-        public DateTime ReleaseDate { get; set; }
-        public string Duration { get; set; }
-        public string TeaserUrl { get; set; }
-        public List<Category> Categories { get; set; }
+using System.ComponentModel.DataAnnotations;
+using Backend.Models;
 
+namespace Backend.ViewModels
+{
+	public class BannerUpdateVM
+	{
+        [Required]
+        public IFormFile Photo { get; set; }
+        [Required]
+        public string ImageUrl { get; set; }
+        [Required]
+        public string BrandName { get; set; }
+        [Required]
+        public string Description { get; set; }
+        [Required]
+        public string Title { get; set; }
+        [Required]
+        public string Quality { get; set; }
+        [Required]
+        public string Status { get; set; }
+        [Required]
+        public DateTime ReleaseDate { get; set; }
+        [Required]
+        public string Duration { get; set; }
+        [Required]
+        public string TeaserUrl { get; set; }
     }
 }
 

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Backend.Models;
 
 namespace Backend.ViewModels
 {
-    public class MovieCreateVM
-    {
+	public class MovieUpdateVM
+	{
         [Required]
         public IFormFile Photo { get; set; }
         [Required]
@@ -29,6 +30,7 @@ namespace Backend.ViewModels
         [Required]
         public List<int> CategoryIds { get; set; }
 
+        public List<Category> CategoryList { get; set; }
     }
 }
 

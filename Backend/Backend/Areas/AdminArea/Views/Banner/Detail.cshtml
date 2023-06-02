@@ -1,0 +1,43 @@
+﻿@using Backend.Helpers
+@model Banner
+
+<style>
+    td {
+        white-space: pre-wrap !important;
+    }
+</style>
+<div class="col-lg-12 stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-contextual">
+                    <thead>
+                        <tr>
+                            <th> Image </th>
+                            <th> Title </th>
+                            <th> Description </th>
+                            <th> Quality </th>
+                            <th> Status </th>
+                            <th> Duration </th>
+                            <th> ReleaseDate </th>
+                            <th> TeaserUrl </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-color">
+                            <td><img src="~/assets/img/banner/@Model.ImageUrl" style="height:80px; width:80px;" /></td>
+                            <td> @Model.Title </td>
+                            <td> @Model.Description </td>
+                            <td> @Model.Quality </td>
+                            <td> @Model.Status </td>
+                            <td> @Model.Duration </td>
+                            <td> @Model.ReleaseDate.ToString("yyyy") </td>
+                            <td> @Model.TeaserUrl </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

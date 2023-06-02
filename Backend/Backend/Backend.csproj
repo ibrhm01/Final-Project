@@ -51,6 +51,7 @@
     <None Remove="Areas\AdminArea\Views\Movie\" />
     <None Remove="Extensions\" />
     <None Remove="Areas\AdminArea\Views\Pricing\" />
+    <None Remove="Areas\AdminArea\Views\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
@@ -79,5 +80,10 @@
     <Folder Include="Areas\AdminArea\Views\Movie\" />
     <Folder Include="Extensions\" />
     <Folder Include="Areas\AdminArea\Views\Pricing\" />
+    <Folder Include="wwwroot\assets\img\banner\" />
+    <Folder Include="Areas\AdminArea\Views\Category\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\assets\img\banner\" />
   </ItemGroup>
 </Project>
