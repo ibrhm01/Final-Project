@@ -35,6 +35,7 @@ namespace Backend.DAL
         public DbSet<BlogContentImage> BlogContentImages { get; set; }
         public DbSet<Season> Seasons { get; set; }
         public DbSet<Episode> Episodes { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -2983,7 +2983,10 @@ label {
         margin-left: 7px;
         color: #e4d804;
     }
-
+.comment-text{
+    height:120px;
+    width:450px;
+}
 .comment-text p {
     margin-bottom: 0;
     padding-right: 35px;

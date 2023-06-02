@@ -90,43 +90,42 @@
                 </div>
                 <div class="blog-comment mb-80">
                     <div class="widget-title mb-45">
-                        <h5 class="title">Comment's (02)</h5>
+                        <h5 class="title">Comment's (@(Model.Blog.Comments.Count))</h5>
                     </div>
+
                     <ul>
-                        <li>
-                            <div class="single-comment">
-                                <div class="comment-avatar-img">
-                                    <img src="~/assets/img/blog/comment_avatar01.jpg" alt="img">
-                                </div>
-                                <div class="comment-text">
-                                    <div class="comment-avatar-info">
-                                        <h5>Daisy Waterstone <span class="comment-date">November 13, 2021</span></h5>
-                                        <a href="#" class="comment-reply-link">Reply <i class="fas fa-reply-all"></i></a>
+                        @if (Model.Blog.Comments.Count != 0)
+                        {
+                            @foreach (var comment in Model.Blog.Comments)
+                            {
+                                <li>
+                                    <div class="single-comment">
+                                        <div class="comment-avatar-img">
+                                            <img src="~/assets/img/blog/comment_avatar01.jpg" alt="img">
+                                        </div>
+                                        <div class="comment-text">
+                                            <div class="comment-avatar-info">
+                                                <h5>Daisy Waterstone <span class="comment-date">@comment.CreatedDate.ToString("MM d, yyyy")November 13, 2021</span></h5>
+                                                @if (comment.AppUserId == ViewBag.UserId)
+                                                {
+                                                    <a asp-action="DeleteComment" asp-route-commentId="@comment.Id" class="comment-reply-link">Reply <i class="fas fa-reply-all"></i></a>
+                                                }
+                                            </div>
+                                            <p>
+                                               @comment.Message 
+                                            </p>
+                                        </div>
+                                        
                                     </div>
-                                    <p>
-                                        Printing and typetting industry. Lorem Ipsum has been the instry standrd the dummy
-                                        text ever since the, when an unknown printer took a galley .
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="comment-reply">
-                            <div class="single-comment">
-                                <div class="comment-avatar-img">
-                                    <img src="~/assets/img/blog/comment_avatar02.jpg" alt="img">
-                                </div>
-                                <div class="comment-text">
-                                    <div class="comment-avatar-info">
-                                        <h5>Jon Deo <span class="comment-date">November 13, 2021</span></h5>
-                                        <a href="#" class="comment-reply-link">Reply <i class="fas fa-reply-all"></i></a>
-                                    </div>
-                                    <p>
-                                        Printing and typetting industry. Lorem Ipsum has been the instry standrd the dummy
-                                        text ever since the, when an unknown printer took a galley .
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            <p>No Comments</p>
+                        }
+
+
                     </ul>
                 </div>
                 <div class="contact-form-wrap">
@@ -134,17 +133,10 @@
                         <h5 class="title">Post a Comment</h5>
                     </div>
                     <div class="contact-form">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" placeholder="You Name *">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" placeholder="You  Email *">
-                                </div>
-                            </div>
-                            <input type="text" placeholder="Subject *">
-                            <textarea name="message" placeholder="Type Your Message..."></textarea>
+                        <form asp-action="AddComment" method="post">
+                            <input type="hidden" name="blogId" value="@Model.Blog.Id" />
+
+                            <textarea name="commentMessage" placeholder="Type Your Message..."></textarea>
                             <button class="btn">Send Message</button>
                         </form>
                     </div>
