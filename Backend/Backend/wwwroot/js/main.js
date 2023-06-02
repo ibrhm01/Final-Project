@@ -1,18 +1,20 @@
 
-//document.addEventListener("DOMContentLoaded", function () {
-//    const progressBar = document.querySelector(".progress-bar");
-//    const windowHeight = window.innerHeight;
-//    const fullHeight = document.body.clientHeight - windowHeight;
-
-//    window.addEventListener("scroll", function () {
-//        const scrollPosition = window.scrollY;
-//        const percentage = (scrollPosition / fullHeight) * 100;
-//        progressBar.style.width = percentage + "%";
-//    });
-//});
 
 (function ($) {
     "use strict";
+
+    //search
+    $(document).on('keyup', '#input-search', function () {
+        let inputValue = $(this).val().trim();
+        $("#searchList li").slice(1).remove();
+        $.ajax({
+            url: "/Common/Search?search=" + inputValue,
+            method: "get",
+            success: function (res) {
+                $("#searchList").append(res)
+            }
+        })
+    })
 
     /*=============================================
         =    		 Preloader			      =

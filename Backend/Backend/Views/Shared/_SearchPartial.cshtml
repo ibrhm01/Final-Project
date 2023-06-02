@@ -1,1 +1,9 @@
-﻿
+﻿@model List<Movie>
+
+@foreach (var item in Model)
+{
+    <li class="list-group-item">
+        <a asp-controller="Movie" asp-action="detail" asp-route-id="@item.Id">@item.Name</a>
+    </li>
+
+}
