@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Backend.ViewModels
 {
-	public class BlogCreateVM
-	{
+    public class BlogCreateVM
+    {
         [Required]
         public IFormFile Photo { get; set; }
         [Required]
@@ -20,13 +20,13 @@ namespace Backend.ViewModels
         [Required]
         public int Like { get; set; }
         [Required]
-        public int Comment { get; set; }
-        [Required]
         public string Quote { get; set; }
         [Required]
         public string QuoteAuthor { get; set; }
         [Required]
         public string QuoteAuthorProfession { get; set; }
+        [Required]
+        public List<int> TagIds { get; set; }
     }
 }
 

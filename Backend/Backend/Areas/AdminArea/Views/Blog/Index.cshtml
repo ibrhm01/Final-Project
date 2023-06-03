@@ -1,39 +1,40 @@
 ﻿@using Backend.Helpers
-@model PaginationVM<Upcoming>
+@model PaginationVM<Blog>
 <div class="col-lg-12 stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Upcoming Table</h4>
-            <a asp-controller="Upcoming" asp-action="Create" class="btn btn-outline-success">Create Upcoming</a>
+            <h4 class="card-title">Blog Table</h4>
+            <a asp-controller="Blog" asp-action="Create" class="btn btn-outline-success">Create Blog</a>
             <div class="table-responsive">
                 <table class="table table-bordered table-contextual">
                     <thead>
                         <tr>
                             <th> # </th>
                             <th> Image </th>
-                            <th> Name </th>
-                            <th> Type </th>
+                            <th> Title </th>
+                            <th> Date </th>
                             <th> Settings </th>
                         </tr>
                     </thead>
                     <tbody>
                         @{ var t = 0;}
-                        @foreach (var upcoming in Model.Items)
+                        @foreach (var blog in Model.Items)
                         {
                             t++;
                             <tr class="table-color">
                                 <td> @t </td>
-                                <td> <img src="~/assets/img/poster/@upcoming.ImageUrl" style="height:80px; width:80px;" /></td>
-                                <td> @upcoming.Name</td>
-                                <td> @upcoming.Type.Name </td>
+                                <td> <img src="~/assets/img/blog/@blog.ImageUrl" style="height:80px; width:80px;" /></td>
+                                <td> @blog.Title</td>
+                                <td> @blog.Date </td>
+
                                 <td>
-                                    <a asp-action="Detail" asp-route-id="@upcoming.Id" class="btn btn-outline-primary">
+                                    <a asp-action="Detail" asp-route-id="@blog.Id" class="btn btn-outline-primary">
                                         <i class="mdi mdi-account-card-details"></i>
                                     </a>
-                                    <a asp-action="Edit" asp-route-id="@upcoming.Id" class="btn btn-outline-warning">
+                                    <a asp-action="Edit" asp-route-id="@blog.Id" class="btn btn-outline-warning">
                                         <i class="mdi mdi-tooltip-edit"></i>
                                     </a>
-                                    <a asp-action="Delete" asp-route-id="@upcoming.Id" class="btn btn-outline-danger">
+                                    <a asp-action="Delete" asp-route-id="@blog.Id" class="btn btn-outline-danger">
                                         <i class="mdi mdi-delete"></i>
                                     </a>
                                 </td>

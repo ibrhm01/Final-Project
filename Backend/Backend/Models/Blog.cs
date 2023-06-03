@@ -11,12 +11,13 @@ namespace Backend.Models
         public string DescTop { get; set; }
         public string DescBottom { get; set; }
         public int Like { get; set; }
-        public int Comment { get; set; }
         public string Quote { get; set; }
         public string QuoteAuthor { get; set; }
         public string QuoteAuthorProfession { get; set; }
         public List<BlogContentImage> BlogContentImages { get; set; }
         public List<Comment> Comments { get; set; }
+        public List<BlogTag> BlogTags { get; set; }
+
 
         //public string BlogAuthorImageUrl { get; set; }
         //public string BlogAuthorDesc{ get; set; }

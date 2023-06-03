@@ -227,10 +227,19 @@ namespace Backend.Areas.AdminArea.Views
                 return View();
             }
 
+
+
             Movie existingMovie = _appDbContext.Movies.Include(m => m.MovieCategories).FirstOrDefault(m => m.Id == id);
             if (existingMovie == null)
             {
                 return NotFound();
+            }
+
+            string fullPath = Path.Combine(_env.WebRootPath, "assets/img/poster", existingMovie.ImageUrl);
+
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
             }
 
             existingMovie.ImageUrl = movieUpdateVM.Photo.SaveImage(_env, "assets/img/poster", movieUpdateVM.Photo.FileName);

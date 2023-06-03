@@ -41,8 +41,10 @@ namespace Backend.Controllers
             blogVM.Blogs = _appDbContext.Blogs
                 .Skip((page - 1) * take)
                 .Take(take)
+                .Include(b=>b.Comments)
                 .ToList();
             int pageCount = CalculatePageCount(_appDbContext.Blogs.ToList(), take);
+
             blogVM.Pagination = new(blogVM.Blogs, pageCount, page);
 
             blogVM.RecentBlogs = _appDbContext.Blogs.Where(t => (t.Date.Hour - DateTime.Now.Hour) < 5).ToList();
@@ -68,7 +70,7 @@ namespace Backend.Controllers
             blogDetailVM.Categories = _appDbContext.Categories.ToList();
             blogDetailVM.Tags = _appDbContext.Tags.ToList();
             blogDetailVM.TrialTest = _appDbContext.TrialTests.FirstOrDefault();
-            blogDetailVM.Blog = _appDbContext.Blogs.Where(b => b.Id == id).Include(b => b.BlogContentImages).Include(b=>b.Comments).FirstOrDefault();
+            blogDetailVM.Blog = _appDbContext.Blogs.Where(b => b.Id == id).Include(b => b.BlogContentImages).Include(b=>b.Comments).Include(b=>b.BlogTags).ThenInclude(b=>b.Tag).FirstOrDefault();
             blogDetailVM.RecentBlogs = _appDbContext.Blogs.Where(t => (t.Date.Hour - DateTime.Now.Hour) < 5).ToList();
             blogDetailVM.Blog.Comments = _appDbContext.Comments.Include(c => c.Blog).Include(c=>c.AppUser).ToList();
             return View(blogDetailVM);

@@ -7,6 +7,7 @@ namespace Backend.ViewModels
 	{
 		public List<Movie> Movies { get; set; }
         public List<TvSeries> TvSeries { get; set; }
+        public List<Blog> Blogs { get; set; }
 
     }
 }

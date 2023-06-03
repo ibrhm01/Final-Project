@@ -36,10 +36,10 @@ namespace Backend.DAL
         public DbSet<Season> Seasons { get; set; }
         public DbSet<Episode> Episodes { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<BlogTag> BlogTags { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Blog>().Property(t => t.Date).HasDefaultValue(DateTime.Now);
             base.OnModelCreating(modelBuilder);
         }
 

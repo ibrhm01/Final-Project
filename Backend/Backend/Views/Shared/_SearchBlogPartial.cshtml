@@ -1,0 +1,20 @@
+﻿@model SearchPartialVM
+
+@foreach (var item in Model.Blogs)
+{
+
+
+    <li class="list-group-item">
+        <a asp-controller="Blog" asp-action="detail" asp-route-id="@item.Id">
+            @if (item.Title.Length > 31)
+            {
+                @item.Title.Substring(0, 50)
+            }
+            else
+            {
+                @item.Title
+            }
+        </a>
+    </li>
+
+}

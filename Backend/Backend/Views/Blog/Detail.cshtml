@@ -30,7 +30,7 @@
                     <div class="blog-post-content">
                         <div class="blog-details-top-meta">
                             <span class="user"><i class="far fa-user"></i> by <a href="#">Admin</a></span>
-                            <span class="date"><i class="far fa-clock"></i> 10 Mar 2021</span>
+                            <span class="date"><i class="far fa-clock"></i> @Model.Blog.Date</span>
                         </div>
                         <h2 class="title">@Model.Blog.Title</h2>
                         <p>
@@ -60,7 +60,12 @@
                             <div class="blog-details-tags">
                                 <ul>
                                     <li><i class="fas fa-tags"></i> <span>Tags :</span></li>
-                                    <li><a href="#">Movies ,</a> <a href="#">Creative ,</a> <a href="#">News ,</a> <a href="#">English</a></li>
+                                    <li>
+                                        @foreach (var item in Model.Blog.BlogTags)
+                                        {
+                                                <a href="#">@item.Tag.Name </a>
+                                        }
+                                    </li>
                                 </ul>
                             </div>
                             <div class="blog-post-share">
@@ -105,17 +110,17 @@
                                         </div>
                                         <div class="comment-text">
                                             <div class="comment-avatar-info">
-                                                <h5>Daisy Waterstone <span class="comment-date">@comment.CreatedDate.ToString("MM d, yyyy")November 13, 2021</span></h5>
+                                                <h5>@comment.AppUser.FullName <span class="comment-date">@comment.CreatedDate.ToString("MMMM dd, yyyy")</span></h5>
                                                 @if (comment.AppUserId == ViewBag.UserId)
                                                 {
-                                                    <a asp-action="DeleteComment" asp-route-commentId="@comment.Id" class="comment-reply-link">Reply <i class="fas fa-reply-all"></i></a>
+                                                    <a asp-action="DeleteComment" asp-route-commentId="@comment.Id" class="comment-reply-link">Delete <i class="fa-solid fa-trash"></i></a>
                                                 }
                                             </div>
                                             <p>
-                                               @comment.Message 
+                                                @comment.Message
                                             </p>
                                         </div>
-                                        
+
                                     </div>
                                 </li>
                             }
@@ -146,12 +151,14 @@
                 <aside class="blog-sidebar">
                     <div class="widget blog-widget">
                         <div class="widget-title mb-30">
-                            <h5 class="title">Search Objects</h5>
+                            <h5 class="title">Search Blogs</h5>
                         </div>
                         <form action="#" class="sidebar-search">
-                            <input type="text" placeholder="Search...">
+                            <input id="inputBlog-search" type="text" placeholder="Search..." name="search">
                             <button><i class="fas fa-search"></i></button>
                         </form>
+                        <ul class="list-group" id="searchBlogList">
+                        </ul>
                     </div>
                     @await Html.PartialAsync("_CategoryPartial", Model.Categories)
 

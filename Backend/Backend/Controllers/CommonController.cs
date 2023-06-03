@@ -20,7 +20,7 @@ namespace Backend.Controllers
             _appDbContext = appDbContext;
         }
 
-        public IActionResult Search(string search)
+        public IActionResult SearchMovie(string search)
         {
             SearchPartialVM searchPartialVM = new();
 
@@ -29,17 +29,33 @@ namespace Backend.Controllers
                 searchPartialVM.Movies = _appDbContext.Movies
                     .Where(m => m.Name.ToLower()
                     .Contains(search.ToLower()))
-                    .Take(4)
+                    .Take(2)
                     .OrderByDescending(p => p.Id)
                     .ToList();
                 searchPartialVM.TvSeries = _appDbContext.TvSeries
                    .Where(m => m.Name.ToLower()
                    .Contains(search.ToLower()))
-                   .Take(4)
+                   .Take(2)
                    .OrderByDescending(p => p.Id)
                    .ToList();
             }
-            return PartialView("_SearchPartial", searchPartialVM);
+            return PartialView("_SearchMoviePartial", searchPartialVM);
+        }
+        public IActionResult SearchBlog(string search)
+        {
+            SearchPartialVM searchPartialVM = new();
+
+            if (!String.IsNullOrEmpty(search))
+            {
+                searchPartialVM.Blogs = _appDbContext.Blogs
+                    .Where(m => m.Title.ToLower()
+                    .Contains(search.ToLower()))
+                    .Take(4)
+                    .OrderByDescending(p => p.Id)
+                    .ToList();
+                
+            }
+            return PartialView("_SearchBlogPartial", searchPartialVM);
         }
     }
 }

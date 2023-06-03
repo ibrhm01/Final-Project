@@ -48,7 +48,7 @@
                                 <ul>
                                     <li><i class="far fa-user"></i> by <a href="#">Admin</a></li>
                                     <li><i class="far fa-thumbs-up"></i> @item.Like</li>
-                                    <li><i class="far fa-comments"></i><a href="#">@item.Comment Comments</a></li>
+                                    <li><i class="far fa-comments"></i><a href="#">@item.Comments.Count Comments</a></li>
                                 </ul>
                                 <div class="read-more">
                                     <a href="blog-details.html">Read More <i class="fas fa-angle-double-right"></i></a>
@@ -74,12 +74,14 @@
                 <aside class="blog-sidebar">
                     <div class="widget blog-widget">
                         <div class="widget-title mb-30">
-                            <h5 class="title">Search Objects</h5>
+                            <h5 class="title">Search Blogs</h5>
                         </div>
                         <form action="#" class="sidebar-search">
-                            <input type="text" placeholder="Search...">
+                            <input id="inputBlog-search" type="text" placeholder="Search..." name="search">
                             <button><i class="fas fa-search"></i></button>
                         </form>
+                        <ul class="list-group" id="searchBlogList">
+                        </ul>
                     </div>
                     @await Html.PartialAsync("_CategoryPartial", Model.Categories)
 

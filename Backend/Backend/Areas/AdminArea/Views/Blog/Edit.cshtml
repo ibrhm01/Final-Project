@@ -1,11 +1,11 @@
-﻿@model UpcomingUpdateVM
+﻿@model BlogUpdateVM
 
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <p class="card-description">
-                    Update Upcoming Form
+                    Update Blog Form
                 </p>
                 <form class="forms-sample" method="post" enctype="multipart/form-data">
                     <div class="form-group">
@@ -14,29 +14,46 @@
                             <span asp-validation-for="Photo" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input asp-for="Name" class="form-control" placeholder="Name">
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <input asp-for="Title" class="form-control" placeholder="Title">
+                            <span asp-validation-for="Title" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input asp-for="ReleaseDate" class="form-control" placeholder="ReleaseDate">
-                            <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                            <input asp-for="Quote" class="form-control" placeholder="Quote">
+                            <span asp-validation-for="Quote" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input asp-for="Quality" class="form-control" placeholder="Quality">
-                            <span asp-validation-for="Quality" class="text-danger"></span>
+                            <input asp-for="QuoteAuthor" class="form-control" placeholder="QuoteAuthor">
+                            <span asp-validation-for="QuoteAuthor" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input asp-for="Duration" class="form-control" placeholder="Duration">
-                            <span asp-validation-for="Duration" class="text-danger"></span>
+                            <input asp-for="QuoteAuthorProfession" class="form-control" placeholder="QuoteAuthorProfession">
+                            <span asp-validation-for="QuoteAuthorProfession" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <input asp-for="Point" class="form-control" placeholder="Point">
-                            <span asp-validation-for="Point" class="text-danger"></span>
+                            <input asp-for="DescTop" class="form-control" placeholder="DescTop">
+                            <span asp-validation-for="DescTop" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <select asp-for="TypeId" asp-items="ViewBag.Types" class="form-select form-select-lg mb-3 col-12">
+                            <input asp-for="DescTop" class="form-control" placeholder="DescTop">
+                            <span asp-validation-for="DescTop" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="DescBottom" class="form-control" placeholder="DescBottom">
+                            <span asp-validation-for="DescBottom" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Like" class="form-control" placeholder="Like">
+                            <span asp-validation-for="Like" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Date" class="form-control" placeholder="Date">
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select asp-for="TagIds" asp-items="ViewBag.Tags" class="form-select form-select-lg mb-3 col-12">
                             </select>
-                            <span asp-validation-for="TypeId" class="text-danger"></span>
+                            <span asp-validation-for="TagIds" class="text-danger"></span>
 
                         </div>
                     </div>
