@@ -1,0 +1,55 @@
+﻿@model CategoryCreateVM
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description">
+                    Create Category Form
+                </p>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+
+                        <div class="form-group">
+                            <input asp-for="Name" class="form-control" placeholder="Name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <select asp-for="MovieIds" asp-items="ViewBag.Movies" class="form-select form-select-lg mb-3 col-12">
+                            </select>
+                            <span asp-validation-for="MovieIds" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <select asp-for="TvSeriesIds" asp-items="ViewBag.TvSeries" class="form-select form-select-lg mb-3 col-12">
+                            </select>
+                            <span asp-validation-for="TvSeriesIds" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <select asp-for="TopRatedIds" asp-items="ViewBag.TopRateds" class="form-select form-select-lg mb-3 col-12">
+                            </select>
+                            <span asp-validation-for="TopRatedIds" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <select asp-for="BannerId" asp-items="ViewBag.Banners" class="form-select form-select-lg mb-3 col-12">
+                                <option value="">-- Select Banner --</option>
+                            </select>
+                            <span asp-validation-for="BannerId" class="text-danger"></span>
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Create</button>
+                    <a asp-action="Index" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationPartial"></partial>
+}

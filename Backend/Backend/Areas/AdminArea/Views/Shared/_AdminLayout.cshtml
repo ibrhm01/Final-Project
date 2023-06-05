@@ -84,7 +84,7 @@
                     <span class="nav-link">Navigation</span>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Dashboard" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Dashboard" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-speedometer"></i>
                         </span>
@@ -92,7 +92,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Pricing" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Pricing" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-playlist-play"></i>
                         </span>
@@ -100,7 +100,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Movie" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Movie" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-playlist-play"></i>
                         </span>
@@ -108,7 +108,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Season" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Season" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-playlist-play"></i>
                         </span>
@@ -116,7 +116,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Episode" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Episode" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-playlist-play"></i>
                         </span>
@@ -124,7 +124,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Pricing" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Pricing" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-table-large"></i>
                         </span>
@@ -132,7 +132,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Banner" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Banner" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>
@@ -140,7 +140,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Streaming" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Streaming" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>
@@ -148,7 +148,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Information" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Information" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>
@@ -156,7 +156,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Upcoming" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Upcoming" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>
@@ -164,7 +164,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="Service" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Service" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>
@@ -172,7 +172,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="TopRated" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="TopRated" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>
@@ -180,7 +180,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" asp-controller="TvSeries" asp-action="Index">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="TvSeries" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>
@@ -188,11 +188,35 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="TrialTest" asp-action="Index">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-chart-bar"></i>
+                        </span>
+                        <span class="menu-title">Trial Test</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
                     <a class="nav-link" asp-area="AdminArea" asp-controller="Blog" asp-action="Index">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
                         </span>
-                        <span class="menu-title">Blogs</span>
+                        <span class="menu-title">Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Category" asp-action="Index">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-chart-bar"></i>
+                        </span>
+                        <span class="menu-title">Category</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" asp-area="AdminArea" asp-controller="Role" asp-action="Index">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-chart-bar"></i>
+                        </span>
+                        <span class="menu-title">Role</span>
                     </a>
                 </li>
             </ul>

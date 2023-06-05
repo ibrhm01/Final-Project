@@ -1,0 +1,43 @@
+﻿@using Backend.Helpers
+@using Microsoft.AspNetCore.Identity
+
+@model UserDetailVM
+<div class="col-lg-12 stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">User Table</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered table-contextual">
+                    <thead>
+                        <tr>
+                            <th> FullName </th>
+                            <th> Email </th>
+                            <th> UserName </th>
+                            <th> Roles </th>
+                            <th> Email Confirmed </th>
+                            <th> IsActive </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-color">
+                            <td> @Model.User.FullName </td>
+                            <td> @Model.User.Email </td>
+                            <td> @Model.User.UserName </td>
+                            <td>
+                                @foreach (var role in Model.UserRoles)
+                                {
+                                    @role <span> </span>
+                                }
+                            </td>
+                            <td> @Model.User.EmailConfirmed </td>
+                            <th> @Model.User.IsActive </th>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+

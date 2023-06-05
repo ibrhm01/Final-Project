@@ -72,6 +72,41 @@
                     </div>
                     <div class="episode-watch-wrap">
                         <div class="accordion" id="accordionExample">
+                            @{
+
+                                string nall = "";
+                                string kall = "";
+
+                            }
+
+                            @foreach (var season in Model.TvSeries.Seasons)
+                            {
+                                nall += "a";
+                                kall += "b";
+
+                                <div class="card">
+                                    <div class="card-header" id="@nall">
+                                        <button class="btn-block text-left" type="button" data-toggle="collapse" data-target="#@kall" aria-expanded="true" aria-controls="@kall">
+                                            <span class="season">Season @season.SeasonNumber</span>
+                                            <span class="video-count">@season.Episodes.Count Full Episodes</span>
+                                        </button>
+                                    </div>
+                                    <div id="@kall" class="collapse show" aria-labelledby="@nall" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <ul>
+                                                @foreach (var episode in season.Episodes)
+                                                {
+                                                    <li><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video"><i class="fas fa-play"></i> Episode @episode.EpisodeNumber-  @episode.Name</a> <span class="duration"><i class="far fa-clock"></i> @episode.Duration Min</span></li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        @*<div class="accordion" id="accordionExample">
+
+
                             @foreach (var season in Model.TvSeries.Seasons)
                             {
                                 <div class="card">
@@ -92,9 +127,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            }
+                            }*@
 
-                        </div>
+                        @*</div>*@
                     </div>
                 </div>
             </div>

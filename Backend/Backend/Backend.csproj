@@ -53,6 +53,8 @@
     <None Remove="Areas\AdminArea\Views\Pricing\" />
     <None Remove="Areas\AdminArea\Views\Category\" />
     <None Remove="Views\TopRated\" />
+    <None Remove="Areas\AdminArea\Views\Role\" />
+    <None Remove="Areas\AdminArea\Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
@@ -84,6 +86,8 @@
     <Folder Include="wwwroot\assets\img\banner\" />
     <Folder Include="Areas\AdminArea\Views\Category\" />
     <Folder Include="Views\TopRated\" />
+    <Folder Include="Areas\AdminArea\Views\Role\" />
+    <Folder Include="Areas\AdminArea\Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\assets\img\banner\" />

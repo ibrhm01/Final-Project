@@ -44,6 +44,7 @@ namespace Backend.Controllers
             user.FullName = registerVM.FullName;
             user.UserName = registerVM.UserName;
             user.Email = registerVM.Email;
+            user.IsActive = true;
 
             IdentityResult result = await _userManager.CreateAsync(user, registerVM.Password);
 
@@ -240,6 +241,12 @@ namespace Backend.Controllers
                     return View(loginVM);
                 }
             }
+            if (!user.IsActive)
+            {
+                ModelState.AddModelError("", "Your account has been blocked by Admin");
+                return View(loginVM);
+
+            }
 
             var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, loginVM.RememberMe, true);
 
@@ -275,7 +282,7 @@ namespace Backend.Controllers
             //    return RedirectToAction("Index", "Dashboard", new { Area = "AdminArea" });
             //}
 
-
+           
 
             return RedirectToAction("index", "Home");
         }

@@ -13,7 +13,8 @@ using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Backend.Areas.AdminArea.Views
+namespace Backend.Areas.AdminArea.Controllers
+
 {
     [Area("AdminArea")]
 
