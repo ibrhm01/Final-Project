@@ -27,21 +27,23 @@
 
                         </tr>
                     </thead>
-                    <tbody>                       
-                            <tr class="table-color">
-                                <td><img src="~/assets/img/poster/@Model.ImageUrl" style="height:80px; width:80px;" /></td>
-                                <td> @Model.Name </td>
-                                <td> @Model.ReleaseDate.ToString("yyyy") </td>
-                                <td> @Model.Quality </td>
-                                <td> @Model.Duration </td>
-                                <td> @Model.Point </td>
-                                <td> @Model.About </td>
-                                <td> @Model.Status </td>
-                                <td> @Model.TeaserUrl </td>
-                            </tr>
+                    <tbody>
+                        <tr class="table-color">
+                            <td><img src="~/assets/img/poster/@Model.ImageUrl" style="height:80px; width:80px;" /></td>
+                            <td> @Model.Name </td>
+                            <td> @Model.ReleaseDate.ToString("yyyy") </td>
+                            <td> @Model.Quality </td>
+                            <td> @Model.Duration </td>
+                            <td> @Model.Point </td>
+                            <td> @Model.About </td>
+                            <td> @Model.Status </td>
+                            <td> @Model.TeaserUrl </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
+            <a asp-action="index" class="btn btn-warning">Back</a>
+
         </div>
     </div>
 </div>

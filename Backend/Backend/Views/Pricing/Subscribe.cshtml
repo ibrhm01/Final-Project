@@ -38,7 +38,8 @@
 
 
                             <div class="pricing-btn">
-                                <a asp-controller="Pricing" asp-action="Subscribe" asp-route-id="@Model.Id" class="btn">Okay</a>
+                                @*<input id="find" name="id" type="hidden" value="@Model.Id"/>*@
+                                <a asp-controller="Pricing" asp-action="AddSubscription" asp-route-id="@Model.Id" class="btn">Okay</a>
                                 <a asp-controller="Pricing" asp-action="Index" class="btn">Cancel</a>
                             </div>
                         </div>

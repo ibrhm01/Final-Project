@@ -1,0 +1,51 @@
+﻿@model BestSeriesUpdateVM
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description">
+                    Update BestTvSeries Form
+                </p>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <input asp-for="Photo" class="form-control" placeholder="Name">
+                            <span asp-validation-for="Photo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Name" class="form-control" placeholder="Name">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="ReleaseDate" class="form-control" placeholder="Date">
+                            <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="Quality" class="form-control" placeholder="Quality">
+                            <span asp-validation-for="Quality" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="Duration" class="form-control" placeholder="Duration" />
+                            <span asp-validation-for="Duration" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input asp-for="Point" class="form-control" placeholder="Point" />
+                            <span asp-validation-for="Point" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+                    <a asp-action="Index" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationPartial"></partial>
+}

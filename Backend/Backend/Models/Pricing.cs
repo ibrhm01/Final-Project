@@ -15,6 +15,9 @@ namespace Backend.Models
         public int AmountOfScreens { get; set; }
         public bool Cancel { get; set; }
 
+        public List<AppUser> Users { get; set; }
+
+
     }
 }
 

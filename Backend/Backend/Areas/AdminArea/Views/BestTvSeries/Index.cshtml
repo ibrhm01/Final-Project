@@ -1,0 +1,79 @@
+﻿@using Backend.Helpers
+@model PaginationVM<BestSeries>
+<div class="col-lg-12 stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">BestTvSeries Table</h4>
+            <a asp-controller="BestTvSeries" asp-action="Create" class="btn btn-outline-success">Create BestTvSeries</a>
+            <div class="table-responsive">
+                <table class="table table-bordered table-contextual">
+                    <thead>
+                        <tr>
+                            <th> # </th>
+                            <th> Image </th>
+                            <th> Name </th>
+                            <th> Release </th>
+                            <th> Settings </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ var t = 0;}
+                        @foreach (var bestSeries in Model.Items)
+                        {
+                            t++;
+                            <tr class="table-color">
+                                <td> @t </td>
+                                <td><img src="~/assets/img/poster/@bestSeries.ImageUrl" style="height:80px; width:80px;" /></td>
+                                <td> @bestSeries.Name </td>
+                                <td> @bestSeries.ReleaseDate.ToString("yyyy") </td>
+                                <td>
+                                    <a asp-action="Detail" asp-route-id="@bestSeries.Id" class="btn btn-outline-primary">
+                                        <i class="mdi mdi-account-card-details"></i>
+                                    </a>
+                                    <a asp-action="Edit" asp-route-id="@bestSeries.Id" class="btn btn-outline-warning">
+                                        <i class="mdi mdi-tooltip-edit"></i>
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@bestSeries.Id" class="btn btn-outline-danger">
+                                        <i class="mdi mdi-delete"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <style>
+                .stretch-card .justify-content-center li:not(.disabled) a {
+                    color: white;
+                }
+
+                    .stretch-card .justify-content-center li:not(.disabled) a:hover {
+                        color: black;
+                        background-color: white;
+                    }
+
+                .table-color {
+                    background-color: ##6b757c;
+                }
+            </style>
+            @if (Model.PageCount > 1)
+            {
+                <div class="col-lg-12 d-flex justify-content-center mt-4">
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-md">
+                            @for (int i = 1; i <= Model.PageCount; i++)
+                            {
+                                <li class="page-item @(Model.CurrentPage == i ? "disabled" : "")">
+                                    <a class="page-link" asp-action="index" asp-route-page="@i" tabindex="-1">@i</a>
+                                </li>
+                            }
+
+                        </ul>
+                    </nav>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

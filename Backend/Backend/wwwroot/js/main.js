@@ -30,11 +30,16 @@
         })
     });
 
-    $(document).on('click', '.pricing-btn a', function (e) {
-        $(".pricing-box-item").removeClass("active");
-        $(this).parent().parent().addClass("active");
-
-    });
+    //$(document).on('click', '.pricing-btn a', function (e) {
+    //    $(".pricing-box-item").removeClass("active");
+    //    $(this).parent().parent().addClass("active");
+    //    $.ajax({
+    //        url: "/Pricing/ss?id=" + inputValue,
+    //        method: "post",
+    //        success: function (res) {
+    //            res.Id            }
+    //    })
+    //});
 
     /*=============================================
         =    		 Preloader			      =

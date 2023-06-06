@@ -233,6 +233,13 @@ namespace Backend.Areas.AdminArea.Controllers
                 return NotFound();
             }
 
+            string fullPath = Path.Combine(_env.WebRootPath, "assets/img/poster", existingTvSeries.ImageUrl);
+
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+            }
+
             existingTvSeries.ImageUrl = tvSeriesUpdateVM.Photo.SaveImage(_env, "assets/img/poster", tvSeriesUpdateVM.Photo.FileName);
             existingTvSeries.Name = tvSeriesUpdateVM.Name;
             existingTvSeries.ReleaseDate = tvSeriesUpdateVM.ReleaseDate;

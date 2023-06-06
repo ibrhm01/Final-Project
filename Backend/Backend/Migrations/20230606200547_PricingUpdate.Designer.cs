@@ -4,6 +4,7 @@ using Backend.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230606200547_PricingUpdate")]
+    partial class PricingUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,9 +74,6 @@ namespace Backend.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("PricingId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -93,8 +93,6 @@ namespace Backend.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("PricingId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -1100,15 +1098,6 @@ namespace Backend.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Backend.Models.AppUser", b =>
-                {
-                    b.HasOne("Backend.Models.Pricing", "Pricing")
-                        .WithMany("Users")
-                        .HasForeignKey("PricingId");
-
-                    b.Navigation("Pricing");
-                });
-
             modelBuilder.Entity("Backend.Models.BlogContentImage", b =>
                 {
                     b.HasOne("Backend.Models.Blog", "Blog")
@@ -1334,11 +1323,6 @@ namespace Backend.Migrations
             modelBuilder.Entity("Backend.Models.Movie", b =>
                 {
                     b.Navigation("MovieCategories");
-                });
-
-            modelBuilder.Entity("Backend.Models.Pricing", b =>
-                {
-                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Backend.Models.Season", b =>

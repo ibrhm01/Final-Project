@@ -1,13 +1,11 @@
-﻿
+﻿@using Backend.Helpers
+@model BestSeries
 
-@using Backend.Helpers
-@model Movie
-
-    <style>
-        td {
-            white-space: pre-wrap !important;
-        }
-    </style>
+<style>
+    td {
+        white-space: pre-wrap !important;
+    }
+</style>
 <div class="col-lg-12 stretch-card">
     <div class="card">
         <div class="card-body">
@@ -21,10 +19,6 @@
                             <th> Quality </th>
                             <th> Duration </th>
                             <th> Rating </th>
-                            <th> About </th>
-                            <th> Status </th>
-                            <th> TeaserUrl </th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -35,9 +29,6 @@
                             <td> @Model.Quality </td>
                             <td> @Model.Duration </td>
                             <td> @Model.Point </td>
-                            <td> @Model.About </td>
-                            <td> @Model.Status </td>
-                            <td> @Model.TeaserUrl </td>
                         </tr>
                     </tbody>
                 </table>
@@ -45,6 +36,10 @@
             <a asp-action="index" class="btn btn-warning">Back</a>
 
         </div>
+
     </div>
+
 </div>
+
+
 
