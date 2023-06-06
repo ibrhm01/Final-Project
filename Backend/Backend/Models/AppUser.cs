@@ -7,6 +7,7 @@ namespace Backend.Models
     {
         public string FullName { get; set; }
         public bool IsActive { get; set; }
+
         //public List<Comment> Comments { get; set; }
     }
 }

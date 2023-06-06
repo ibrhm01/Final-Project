@@ -161,12 +161,14 @@
 
             @foreach (var movie in Model.Movies)
             {
+                bool isRendered = false;
                 @foreach (var movieCategory in movie.MovieCategories)
                 {
                     @foreach (var item in Model.Movie.MovieCategories)
                     {
-                        if (item.Category == movieCategory.Category)
+                        if (item.Category == movieCategory.Category && !isRendered)
                         {
+                            isRendered = true;
                             <div class="col-xl-3 col-lg-4 col-sm-6">
                                 <div class="movie-item mb-50">
                                     <div class="movie-poster">

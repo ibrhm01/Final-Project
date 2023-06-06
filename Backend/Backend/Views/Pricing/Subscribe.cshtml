@@ -1,0 +1,51 @@
+﻿@model Pricing  
+
+<section class="pricing-area pricing-bg" data-background="../../assets/img/bg/pricing_bg.jpg" style="background-image: url(&quot;assets/img/bg/pricing_bg.jpg&quot;);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title title-style-three text-center mb-70 mt-100">
+                    <span class="sub-title">our pricing plans</span>
+                    <h2 class="title">Our Pricing Strategy</h2>
+                </div>
+            </div>
+        </div>
+        <div class="pricing-box-wrap">
+            <div class="row justify-content-center">
+               
+                    <div class="col-sm-7">
+                        <div class="pricing-box-item mb-30">
+                            <div class="pricing-top">
+                                <h6>@Model.PricingType</h6>
+                                <div class="price">
+                                    <h3>$@Model.Price</h3>
+                                    <span>Monthly</span>
+                                </div>
+                            </div>
+                            <div class="pricing-list">
+                                <ul>
+                                    <li class="quality"><i class="fas fa-check"></i> Video quality <span>@Model.VideoQuality</span></li>
+                                    <li><i class="fas fa-check"></i> Resolution <span>@Model.Resolution</span></li>
+                                    <li><i class="fas fa-check"></i> Screens you can watch <span>@Model.AmountOfScreens</span></li>
+                                    <li>
+                                        @if (Model.Cancel == true)
+                                        {<i class="fas fa-check"></i>}
+                                        else
+                                        {<i class="fa-solid fa-xmark"></i>} Cancel anytime
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="pricing-btn">
+                                <a asp-controller="Pricing" asp-action="Subscribe" asp-route-id="@Model.Id" class="btn">Okay</a>
+                                <a asp-controller="Pricing" asp-action="Index" class="btn">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                
+
+            </div>
+        </div>
+    </div>
+</section>

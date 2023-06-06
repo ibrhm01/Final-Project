@@ -30,6 +30,12 @@
         })
     });
 
+    $(document).on('click', '.pricing-btn a', function (e) {
+        $(".pricing-box-item").removeClass("active");
+        $(this).parent().parent().addClass("active");
+
+    });
+
     /*=============================================
         =    		 Preloader			      =
     =============================================*/

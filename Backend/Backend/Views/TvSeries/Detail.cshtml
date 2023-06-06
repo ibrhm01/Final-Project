@@ -174,12 +174,16 @@
 
             @foreach (var tvSeries in Model.TvSeriesList)
             {
+                bool isRendered = false;
+
                 @foreach (var tvSeriesCategory in tvSeries.TvSeriesCategories)
                 {
                     @foreach (var item in Model.TvSeries.TvSeriesCategories)
                     {
-                        if (item.Category == tvSeriesCategory.Category)
+                        if (item.Category == tvSeriesCategory.Category && !isRendered)
                         {
+                            isRendered = true;
+
                             <div class="col-xl-3 col-lg-4 col-sm-6">
                                 <div class="movie-item mb-50">
                                     <div class="movie-poster">

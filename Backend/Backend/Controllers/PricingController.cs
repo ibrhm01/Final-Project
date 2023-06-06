@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Backend.DAL;
+using Backend.Models;
 using Backend.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,6 +30,16 @@ namespace Backend.Controllers
             
 
             return View(pricingVM);
+        }
+
+
+
+        public IActionResult Subscribe(int id)
+        {
+            Pricing pricing = _appDbContext.Pricings.Where(p => p.Id == id).FirstOrDefault();
+
+
+            return View(pricing);
         }
     }
 }
