@@ -6,7 +6,9 @@ using Backend.DAL;
 using Backend.Extensions;
 using Backend.Helpers;
 using Backend.Models;
+using Backend.Services.Interfaces;
 using Backend.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -19,13 +21,20 @@ namespace Backend.Areas.AdminArea.Controllers
 
     public class TvSeriesController : Controller
     {
+        public readonly UserManager<AppUser> _userManager;
         public readonly AppDbContext _appDbContext;
+        private readonly IFileService _fileService;
         private readonly IWebHostEnvironment _env;
+        private readonly IEmailService _emailService;
 
-        public TvSeriesController(IWebHostEnvironment env, AppDbContext appDbContext)
+
+        public TvSeriesController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, IEmailService emailService, IFileService fileService, IWebHostEnvironment env, AppDbContext appDbContext)
         {
+            _userManager = userManager;
+            _emailService = emailService;
             _env = env;
             _appDbContext = appDbContext;
+            _fileService = fileService;
         }
         // GET: /<controller>/
         public IActionResult Index(int page = 1, int take = 3)
@@ -136,6 +145,25 @@ namespace Backend.Areas.AdminArea.Controllers
 
             _appDbContext.TvSeries.Add(newTvSeries);
             _appDbContext.SaveChanges();
+
+            List<AppUser> subscribedUsers = _appDbContext.Users.Where(u => u.PricingId != null).ToList();
+
+            foreach (var subscribedUser in subscribedUsers)
+            {
+
+                string link = Url.Action("Detail", "TvSeries", new { Area = "", id = newTvSeries.Id }, Request.Scheme, Request.Host.ToString());
+
+                string body = string.Empty;
+
+                string path = "wwwroot/NewTvSeries.html";
+                body = _fileService.ReadFile(path, body);
+
+                body = body.Replace("{{link}}", link);
+                body = body.Replace("{{TvSeriesName}}", newTvSeries.Name);
+
+                string subject = "New TvSeries";
+                _emailService.Send(subscribedUser.Email, subject, body);
+            }
 
             return RedirectToAction("Index");
         }

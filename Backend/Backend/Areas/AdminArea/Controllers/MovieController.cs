@@ -6,7 +6,10 @@ using Backend.DAL;
 using Backend.Extensions;
 using Backend.Helpers;
 using Backend.Models;
+using Backend.Services;
+using Backend.Services.Interfaces;
 using Backend.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,14 +23,20 @@ namespace Backend.Areas.AdminArea.Controllers
 
     public class MovieController : Controller
     {
+        public readonly UserManager<AppUser> _userManager;
         public readonly AppDbContext _appDbContext;
+        private readonly IFileService _fileService;
         private readonly IWebHostEnvironment _env;
-
-        public MovieController(IWebHostEnvironment env, AppDbContext appDbContext)
+        private readonly IEmailService _emailService;
+        public MovieController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager, IEmailService emailService, IFileService fileService, IWebHostEnvironment env, AppDbContext appDbContext)
         {
+            _userManager = userManager;
+            _emailService = emailService;
             _env = env;
             _appDbContext = appDbContext;
+            _fileService = fileService;
         }
+       
         // GET: /<controller>/
         public IActionResult Index(int page = 1, int take = 3)
         {
@@ -59,7 +68,7 @@ namespace Backend.Areas.AdminArea.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(MovieCreateVM movieCreateVM)
+        public async Task<IActionResult> Create(MovieCreateVM movieCreateVM)
         {
             if (movieCreateVM.Photo == null)
             {
@@ -137,6 +146,26 @@ namespace Backend.Areas.AdminArea.Controllers
 
             _appDbContext.Movies.Add(newMovie);
             _appDbContext.SaveChanges();
+
+
+            List<AppUser> subscribedUsers = _appDbContext.Users.Where(u => u.PricingId != null).ToList();
+
+            foreach (var subscribedUser in subscribedUsers)
+            {
+
+                string link = Url.Action("Detail", "Movie", new { Area = "", id = newMovie.Id}, Request.Scheme, Request.Host.ToString());
+
+                string body = string.Empty;
+               
+                string path = "wwwroot/NewMovie.html";
+                body = _fileService.ReadFile(path, body);
+
+                body = body.Replace("{{link}}", link);
+                body = body.Replace("{{MovieName}}", newMovie.Name);
+
+                string subject = "New Movie";
+                _emailService.Send(subscribedUser.Email, subject, body);
+            }
 
             return RedirectToAction("Index");
         }
