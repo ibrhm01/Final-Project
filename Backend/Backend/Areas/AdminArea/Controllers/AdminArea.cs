@@ -12,7 +12,9 @@ namespace Backend.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
 
-    public class DashboardController : Controller
+    [Authorize(Roles = "Member")]
+
+    public class AdminArea : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()

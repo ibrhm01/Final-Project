@@ -311,6 +311,15 @@ namespace Backend.Areas.AdminArea.Controllers
 
             if (deletedMovie == null) return NotFound();
 
+
+            string fullPath = Path.Combine(_env.WebRootPath, "assets/img/poster", deletedMovie.ImageUrl);
+
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+            }
+
+
             _appDbContext.Remove(deletedMovie);
             _appDbContext.SaveChanges();
             return RedirectToAction("Index");
