@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Backend.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "SuperAdmin, Admin")]
     public class BannerController : Controller
     {
         // GET: /<controller>/

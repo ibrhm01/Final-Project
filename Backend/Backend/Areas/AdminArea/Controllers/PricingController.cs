@@ -6,6 +6,7 @@ using Backend.DAL;
 using Backend.Helpers;
 using Backend.Models;
 using Backend.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol.Plugins;
 
@@ -14,6 +15,7 @@ using NuGet.Protocol.Plugins;
 namespace Backend.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "SuperAdmin, Admin")]
 
     public class PricingController : Controller
     {

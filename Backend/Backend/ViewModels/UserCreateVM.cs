@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Backend.Models;
 
 namespace Backend.ViewModels
 {
@@ -19,6 +20,14 @@ namespace Backend.ViewModels
 
         [Required]
         public IList<string> UserRoles { get; set; }
+
+        [Required]
+        public bool EmailConfirmed { get; set; }
+
+        [Required]
+        public bool IsActive { get; set; }
+
+        public int? PricingId { get; set; }
     }
 }
 

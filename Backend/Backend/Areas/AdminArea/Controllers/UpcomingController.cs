@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Backend.DAL;
@@ -7,6 +8,7 @@ using Backend.Extensions;
 using Backend.Helpers;
 using Backend.Models;
 using Backend.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Backend.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "SuperAdmin, Admin")]
 
     public class UpcomingController : Controller
     {

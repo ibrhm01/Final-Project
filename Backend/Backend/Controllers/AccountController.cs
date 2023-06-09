@@ -46,9 +46,21 @@ namespace Backend.Controllers
             user.Email = registerVM.Email;
             user.IsActive = true;
 
+            
+
             IdentityResult result = await _userManager.CreateAsync(user, registerVM.Password);
 
             if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                return View(registerVM);
+            }
+            IdentityResult result0 = await _userManager.AddToRoleAsync(user, "Member");
+            if (!result0.Succeeded)
             {
                 foreach (var error in result.Errors)
                 {

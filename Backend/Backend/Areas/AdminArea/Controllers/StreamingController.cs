@@ -6,6 +6,7 @@ using Backend.DAL;
 using Backend.Extensions;
 using Backend.Models;
 using Backend.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more Streaming on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -13,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Backend.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "SuperAdmin, Admin")]
 
     public class StreamingController : Controller
     {

@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Backend.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "SuperAdmin, Admin")]
 
     public class BestTvSeriesController : Controller
     {

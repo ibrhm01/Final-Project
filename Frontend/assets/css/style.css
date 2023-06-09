@@ -195,7 +195,6 @@ label {
   border-top: 1px solid #f2f2f2;
 }
 
-/* All-color */
 .navbar-wrap > ul > li.active > a,
 .navbar-wrap > ul > li:hover > a,
 .mobile-menu .navigation li.active > a,
@@ -237,7 +236,6 @@ label {
   background: #e4d804;
 }
 
-/* button style */
 .btn {
   -webkit-user-select: none;
           user-select: none;
@@ -280,7 +278,6 @@ label {
   outline: none;
 }
 
-/* scrollUp */
 .scroll-top {
   width: 50px;
   height: 50px;
@@ -321,8 +318,7 @@ label {
   color: #fff;
 }
 
-/* 2. Header */
-/* 2. Header */
+
 .custom-container {
   max-width: 1420px;
 }
@@ -659,7 +655,6 @@ label {
   margin-left: 30px;
 }
 
-/* 3. Search modal */
 #search-modal {
   background-color: rgba(23, 26, 33, 0.95);
 }
@@ -720,7 +715,6 @@ label {
   z-index: 2;
 }
 
-/* 4. Mobile-menu */
 .nav-outer .mobile-nav-toggler {
   position: relative;
   float: right;
@@ -921,7 +915,6 @@ label {
   margin-top: 7px;
 }
 
-/* 5. Breadcrumb */
 .breadcrumb-bg {
   padding: 270px 0 240px;
   background-position: center;
@@ -991,7 +984,6 @@ label {
   padding-right: 14px;
 }
 
-/* 6. Banner */
 .banner-bg {
   padding: 295px 0 273px;
   background-position: center;
@@ -1086,7 +1078,6 @@ label {
   margin-right: -15px;
 }
 
-/* 7. Up-coming */
 .ucm-bg {
   padding: 120px 0 70px;
   background-position: center;
@@ -1417,7 +1408,6 @@ label {
   padding: 120px 0 120px;
 }
 
-/* 8. Services */
 .services-bg {
   background-position: center;
   background-size: cover;
@@ -1569,7 +1559,6 @@ label {
   padding: 28px 55px;
 }
 
-/* 9. Top-movies */
 .tr-movie-bg {
   background-position: top center;
   background-size: cover;
@@ -1758,7 +1747,6 @@ label {
   color: #e4d804;
 }
 
-/* 10. Gallery */
 .gallery-area.position-relative {
   z-index: 1;
   padding: 120px 0 0;
@@ -1831,7 +1819,6 @@ label {
   color: #e4d804;
 }
 
-/* 11. Pagination */
 .pagination-wrap ul {
   display: flex;
   align-items: center;
@@ -1854,7 +1841,6 @@ label {
   background: #e4d804;
 }
 
-/* 12. Live-show */
 .live-bg {
   background-position: left center;
   background-size: cover;
@@ -1937,7 +1923,6 @@ label {
   box-shadow: none;
 }
 
-/* 13. Movie-details */
 .movie-details-area {
   background-position: top center;
   background-size: cover;
@@ -2248,7 +2233,6 @@ label {
   margin-top: 75px;
 }
 
-/* 14. Pricing */
 .pricing-bg {
   background-position: top center;
   background-size: cover;
@@ -2348,7 +2332,6 @@ label {
   background: #e4d804;
 }
 
-/* 15. Tv-series */
 .tv-series-bg {
   background-position: center;
   background-size: cover;
@@ -2366,7 +2349,6 @@ label {
   color: #fff;
 }
 
-/* 16. Blog */
 .blog-bg {
   background-position: top center;
   background-size: cover;
@@ -2910,7 +2892,6 @@ label {
   color: #e4d804;
 }
 
-/* 17. Newsletter */
 .newsletter-bg {
   background-position: center;
   background-size: cover;
@@ -2967,7 +2948,6 @@ label {
   padding: 15px 34px;
 }
 
-/* 18. Contact */
 .contact-bg {
   background-position: top center;
   background-size: cover;
@@ -3090,7 +3070,6 @@ label {
   /* cursor: pointer; */
 }
 
-/* 19. Footer */
 .footer-top-wrap {
   background-image: url(../img/bg/footer_bg.jpg);
   background-position: center;
@@ -3249,7 +3228,6 @@ label {
   max-width: 100%;
 }
 
-/* 20. Preloader */
 #preloader {
   background-color: #171d22;
   height: 100%;

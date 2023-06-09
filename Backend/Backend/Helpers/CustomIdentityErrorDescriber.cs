@@ -10,7 +10,7 @@ namespace Backend.Helpers
             return new IdentityError
             {
                 Code = nameof(DuplicateUserName),
-                Description = $"'{userName}' artıq mövcuddur"
+                Description = $"'{userName}' already exists"
             };
         }
 
